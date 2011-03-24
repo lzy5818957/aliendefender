@@ -20,8 +20,8 @@
 
 -(void)move
 {
-    
-    if (sprite.position.y <= 298) 
+    //flying
+    if (sprite.position.y <= 290) 
     {
         
         body->ApplyForce(b2Vec2(0,10),body->GetWorldCenter());

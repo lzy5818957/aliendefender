@@ -21,17 +21,18 @@
 
 	GameWorld *gameWorld;
 	LevelObject *level;
-	// Define this as an instance variable
-    NSTimeInterval ltouchStartTime; 
+
     CGPoint rTouchStartLocation;
     CGPoint weaponDirection;
     float angle;
+    float chargeTimer;
+    BOOL chargeStart;
 
 }
 
 @property(nonatomic,retain) GameWorld *gameWorld;
 @property(nonatomic,retain) LevelObject *level;
-@property(nonatomic,readonly) NSTimeInterval ltouchStartTime;
+
 @property(nonatomic,readonly) CGPoint weaponDirection;
 // returns a Scene that contains the GameScene as the only child
 +(id) scene;

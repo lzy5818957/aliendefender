@@ -18,8 +18,9 @@
     
     life = 10;
 
-	texture = [[CCTexture2D alloc] initWithString:@"Life" fontName:@"Arial" fontSize:16.0f];
+	texture = [[CCTexture2D alloc] initWithString:@"---" fontName:@"Arial" fontSize:16.0f];
     sprite = [[CCSprite spriteWithTexture:texture] retain];
+    sprite.anchorPoint = CGPointMake(0, 0);
 	sprite.position = p;
 	bodyDef.type = b2_staticBody;
 	bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);

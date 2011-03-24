@@ -12,7 +12,7 @@
 
 @implementation GameScene
 
-@synthesize gameWorld, level,ltouchStartTime, weaponDirection;
+@synthesize gameWorld, level, weaponDirection;
 
 +(id) scene
 {
@@ -47,6 +47,8 @@
         //initWeaponDirection
         weaponDirection = CGPointMake(1, 0);
 		angle = 0.f;
+        chargeTimer = 1;
+        chargeStart = NO;
 		//init GameWorld
 		gameWorld = [[GameWorld alloc] init];
 		[gameWorld setDelegate:self];
@@ -106,6 +108,14 @@
 	gameWorld.world->Step(dt, velocityIterations, positionIterations);
 
 	[gameWorld update:dt];
+    // Calculate how long touch lasted
+    
+    if(chargeStart == YES)
+    {
+        chargeTimer += 0.05;
+
+    }
+    gameWorld.player.playerLife.sprite.scaleX = chargeTimer;
     
 
 }
@@ -119,8 +129,8 @@
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
-            // When the touch event was detected
-            ltouchStartTime = [event timestamp];
+            chargeStart = YES;
+            
         }
         else
         {
@@ -143,12 +153,13 @@
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 {
 
+
     for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
         if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
-
+            
         }
         else
         {
@@ -164,8 +175,7 @@
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 {
-    // Calculate how long touch lasted
-    NSTimeInterval touchTimeDuration;
+
     
     //NSLog(@"Touch duration: %3.2f seconds", touchTimeDuration);
     
@@ -174,14 +184,17 @@
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
         if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
-            touchTimeDuration = [event timestamp] - ltouchStartTime;
+
             //fire weapon
-            PlayerWeaponObject *weapon = [gameWorld.player loadWeaponCharge:touchTimeDuration*5  Direction:weaponDirection];
+            PlayerWeaponObject *weapon = [gameWorld.player loadWeaponCharge:chargeTimer*4  Direction:weaponDirection];
+            chargeTimer = 1;
+            chargeStart = NO;
             [[gameWorld weaponArray] addObject:weapon];
         }
         else
         {
 
+            
             //  We find the vector to do a hit detection based on the percentage
             //  We know the first vector is the one @ 12 o'clock (top,mid) so we rotate
             //  from that by the progress angle around the midpoint pivot
