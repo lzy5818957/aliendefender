@@ -51,7 +51,7 @@
 		gameWorld = [[GameWorld alloc] init];
 		[gameWorld setDelegate:self];
 
-		level = [[LevelObject levelWithLevelNumber:[NSNumber numberWithInt:1]] retain];
+		level = [[LevelObject levelWithLevelNumber:1] retain];
 		NSMutableArray *wavesOfGameObjectArray = [level generateGameObject];
         [gameWorld setUpPlayerWeapon];
 		[gameWorld setGameObjectReadyQueue: wavesOfGameObjectArray];

@@ -20,9 +20,9 @@
 
 -(void)move
 {
-    if (body->GetLinearVelocity().Length() <= [speed floatValue]/10) 
+    if (body->GetLinearVelocity().Length() <= speed/10) 
     {
-        body->ApplyForce(b2Vec2((-1)*[speed floatValue],0),body->GetWorldCenter());
+        body->ApplyForce(b2Vec2((-1)*speed,0),body->GetWorldCenter());
     }
 }
 

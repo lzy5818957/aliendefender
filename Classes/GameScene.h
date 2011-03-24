@@ -26,6 +26,7 @@
     CGPoint rTouchStartLocation;
     CGPoint weaponDirection;
     float angle;
+
 }
 
 @property(nonatomic,retain) GameWorld *gameWorld;

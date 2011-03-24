@@ -11,7 +11,9 @@
 
 @interface EnemyObject : GameObject {
 
-    NSNumber *speed;
+    float speed;
+
 }
-@property (nonatomic,retain) NSNumber *speed;
+@property (nonatomic,readwrite) float speed;
+
 @end

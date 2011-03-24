@@ -10,9 +10,10 @@
 #import "GameObject.h"
 
 @interface PlayerWeaponObject : GameObject {
-
+    
+    float attack;
 }
-
+@property (nonatomic,readwrite) float attack;
 -(void)update;
 -(void)fire;
 @end

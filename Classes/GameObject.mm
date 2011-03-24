@@ -11,7 +11,7 @@
 
 @implementation GameObject
 
-@synthesize sprite, bodyDef, body, fixture, fixtureDef, shape ,type ,toBeRemoved, texture;
+@synthesize sprite, bodyDef, body, fixture, fixtureDef, shape ,type ,toBeRemoved, texture, health;
 
 -(id)init
 {
@@ -19,11 +19,17 @@
     bodyDef.userData = self;
     fixtureDef.userData = self;
 	toBeRemoved = NO;
+    health = 100;
     return self;
 }
 
 -(void)update
 {
+    //dead update
+    if (health <=0 ) {
+        [self setToBeRemoved:true];
+    }
+    
     //position update
     sprite.position = CGPointMake( body->GetPosition().x * PTM_RATIO, body->GetPosition().y * PTM_RATIO);
     //rotation update
@@ -37,6 +43,10 @@
         sprite.rotation = -1 * CC_RADIANS_TO_DEGREES(atan2(body->GetLinearVelocity().y,body->GetLinearVelocity().x));
     }
 
+}
+-(void)damage:(int)amount
+{
+    health  -= amount;
 }
 
 -(void)move

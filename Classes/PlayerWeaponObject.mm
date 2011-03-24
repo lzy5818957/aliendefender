@@ -10,6 +10,7 @@
 
 
 @implementation PlayerWeaponObject
+@synthesize attack;
 
 -(void)update
 {

@@ -13,16 +13,19 @@
 
 @synthesize waves;
 
-+(id)levelWithLevelNumber:(NSNumber *)levelNumber
++(id)levelWithLevelNumber:(int)levelNumber
 {
 	return [[[self alloc] initWithLevelNumber:levelNumber] autorelease];
 
 }
--(id)initWithLevelNumber:(NSNumber *)levelNumber
+-(id)initWithLevelNumber:(int)levelNumber
 {
 	[super init];
-	//will give definition of level later
-	waves = [NSMutableArray arrayWithObject:[WaveObject waveWithnumberOfEnemy:[NSNumber numberWithInt:10] Difficulty:[NSNumber numberWithFloat:1.2] Type:TypeAlien]];
+    if (levelNumber == 1) {
+        //will give definition of level later
+        waves = [NSMutableArray arrayWithObject:[WaveObject waveWithnumberOfEnemy:10 Difficulty:1.2 Type:TypeAlien]];
+    }
+
 	
 	return self;
 }
@@ -38,9 +41,12 @@
 		switch (wave.gameObjectType) {
 				
 			case TypeAlien:
-				for (int i = 0; i < [wave.numberOfEnemies intValue] ; i++) 
+				for (int i = 0; i < wave.numberOfEnemies ; i++) 
 				{
-					[gameObjectArray addObject: [[[Alien alloc] initWithCoords:CGPointMake(screenSize.width, 30)] autorelease]];
+                    GameObject *gameObject = [[[Alien alloc] initWithCoords:CGPointMake(screenSize.width, 30)] autorelease];
+					[gameObjectArray addObject: gameObject];
+                    gameObject.health = (gameObject.health)*(wave.difficulty);
+                    
 				}
 				break;
 				

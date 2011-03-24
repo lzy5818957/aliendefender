@@ -213,7 +213,17 @@
                 /*
 
 				*/
-				[fixtureAGameObject setToBeRemoved:YES];
+                if(fixtureAGameObject.type == TypePhysicalBullet)
+                {
+                    [fixtureAGameObject setHealth:0];
+                    [fixtureBGameObject damage:((PlayerWeaponObject*)fixtureAGameObject).attack];
+                }
+                else
+                {
+                    [fixtureBGameObject setHealth:0];
+                    [fixtureAGameObject damage:((PlayerWeaponObject*)fixtureBGameObject).attack];
+                }
+				
 				[fixtureBGameObject setToBeRemoved:YES];
 				
             }

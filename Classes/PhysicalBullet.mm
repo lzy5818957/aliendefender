@@ -16,7 +16,7 @@
 {
     
     self = [super init];
-    
+    attack = 50;
 	texture = [[CCTexture2D alloc] initWithString:@"PhysicalBullet" fontName:@"Arial" fontSize:12.0f];
     sprite = [[CCSprite spriteWithTexture:texture] retain];
 	sprite.position = p;

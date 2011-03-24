@@ -33,6 +33,7 @@ enum GameObjectType {
 	GameObjectType type;
 	Boolean toBeRemoved;
     CCTexture2D *texture;
+    float health;
     
     
 }
@@ -46,8 +47,10 @@ enum GameObjectType {
 @property (nonatomic,readwrite) GameObjectType type;
 @property (nonatomic,readwrite) Boolean toBeRemoved;
 @property (nonatomic,retain) CCTexture2D *texture;
+@property (nonatomic,readwrite) float health;
 //Shape must be initiallized before calling this method while extending this class
 
 -(void)update;
+-(void)damage:(int)amount;
 -(void)move;
 @end
