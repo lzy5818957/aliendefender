@@ -15,7 +15,8 @@
 #import "GameObject.h"
 #import "Alien.h"
 #import "Player.h"
-#import "ScreenBoundry.h"
+#import "Ground.h"
+#import "Exit.h"
 
 @protocol GameWorldDelegate 
 
@@ -35,7 +36,8 @@
     NSMutableArray *weaponArray;
 	NSMutableArray *currentOnSceneArray;
 	NSMutableArray *toBeRemovedArray;\
-    GameObject *boundry;
+    ScreenBoundryObject *boundry;
+    ScreenBoundryObject *exit;
     Player *player;
     ccTime accumlator;
     
@@ -51,6 +53,9 @@
 @property (nonatomic, retain) NSMutableArray *currentOnSceneArray;
 @property (nonatomic, retain) NSMutableArray *toBeRemovedArray;
 @property (nonatomic, retain) Player *player;
+@property (nonatomic, retain) GameObject *boundry;
+@property (nonatomic, retain) GameObject *exit;
+
 -(void)initWorld;
 -(void)initDebugMode;
 -(void)initBoundry;
@@ -60,7 +65,6 @@
 -(void)physicalRealize:(GameObject*) gameObject;
 
 -(void)update:(ccTime)dt;
--(void)handleContact;
 
 -(void)emitEnemy;
 -(void)emitWeapon;

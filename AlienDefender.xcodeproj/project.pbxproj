@@ -10,11 +10,14 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* AlienDefenderAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* AlienDefenderAppDelegate.mm */; };
 		287B972513315D4300A7BC66 /* PhysicalBullet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 287B972413315D4300A7BC66 /* PhysicalBullet.mm */; };
-		28D504AF1330480700A1B9C7 /* ScreenBoundry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28D504AE1330480700A1B9C7 /* ScreenBoundry.mm */; };
+		28D504AF1330480700A1B9C7 /* ScreenBoundryObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28D504AE1330480700A1B9C7 /* ScreenBoundryObject.mm */; };
 		28D504CB133060B200A1B9C7 /* GroundEnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28D504CA133060B000A1B9C7 /* GroundEnemyObject.mm */; };
 		4A019B82133144BB0096223F /* FlyingEnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A019B81133144BB0096223F /* FlyingEnemyObject.mm */; };
 		4A50FB9E132F295100C8BBC3 /* EnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A50FB9D132F295100C8BBC3 /* EnemyObject.mm */; };
 		4A6C3D89132F4E5500C39500 /* ufo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C3D88132F4E5500C39500 /* ufo.png */; };
+		4AA40692133AF12A00692288 /* Ground.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40691133AF12900692288 /* Ground.mm */; };
+		4AA40695133AF21200692288 /* Exit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40694133AF20F00692288 /* Exit.mm */; };
+		4AA40698133AFE0400692288 /* PlayerLife.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40697133AFE0300692288 /* PlayerLife.mm */; };
 		4ACDB28E132EEB0F0082F084 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB28D132EEB0F0082F084 /* MyContactListener.mm */; };
 		4ACDB294132EED6A0082F084 /* GameWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB293132EED6A0082F084 /* GameWorld.mm */; };
 		4ACDB2C3132EF1920082F084 /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB2C2132EF1920082F084 /* GameScene.mm */; };
@@ -355,8 +358,8 @@
 		1F3B9A820EF2151B00286867 /* AlienDefender_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlienDefender_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		287B972313315D4300A7BC66 /* PhysicalBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalBullet.h; sourceTree = "<group>"; };
 		287B972413315D4300A7BC66 /* PhysicalBullet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicalBullet.mm; sourceTree = "<group>"; };
-		28D504AD1330480700A1B9C7 /* ScreenBoundry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenBoundry.h; sourceTree = "<group>"; };
-		28D504AE1330480700A1B9C7 /* ScreenBoundry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenBoundry.mm; sourceTree = "<group>"; };
+		28D504AD1330480700A1B9C7 /* ScreenBoundryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenBoundryObject.h; sourceTree = "<group>"; };
+		28D504AE1330480700A1B9C7 /* ScreenBoundryObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenBoundryObject.mm; sourceTree = "<group>"; };
 		28D504C9133060AF00A1B9C7 /* GroundEnemyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroundEnemyObject.h; sourceTree = "<group>"; };
 		28D504CA133060B000A1B9C7 /* GroundEnemyObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GroundEnemyObject.mm; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -365,6 +368,12 @@
 		4A50FB9C132F295100C8BBC3 /* EnemyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyObject.h; sourceTree = "<group>"; };
 		4A50FB9D132F295100C8BBC3 /* EnemyObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EnemyObject.mm; sourceTree = "<group>"; };
 		4A6C3D88132F4E5500C39500 /* ufo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo.png; sourceTree = "<group>"; };
+		4AA40690133AF12900692288 /* Ground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
+		4AA40691133AF12900692288 /* Ground.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Ground.mm; sourceTree = "<group>"; };
+		4AA40693133AF20E00692288 /* Exit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exit.h; sourceTree = "<group>"; };
+		4AA40694133AF20F00692288 /* Exit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Exit.mm; sourceTree = "<group>"; };
+		4AA40696133AFE0300692288 /* PlayerLife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerLife.h; sourceTree = "<group>"; };
+		4AA40697133AFE0300692288 /* PlayerLife.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerLife.mm; sourceTree = "<group>"; };
 		4ACDB28C132EEB0F0082F084 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
 		4ACDB28D132EEB0F0082F084 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 		4ACDB292132EED6A0082F084 /* GameWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorld.h; sourceTree = "<group>"; };
@@ -755,8 +764,12 @@
 		28D504AB1330476600A1B9C7 /* SceenBoundry */ = {
 			isa = PBXGroup;
 			children = (
-				28D504AD1330480700A1B9C7 /* ScreenBoundry.h */,
-				28D504AE1330480700A1B9C7 /* ScreenBoundry.mm */,
+				28D504AD1330480700A1B9C7 /* ScreenBoundryObject.h */,
+				28D504AE1330480700A1B9C7 /* ScreenBoundryObject.mm */,
+				4AA40690133AF12900692288 /* Ground.h */,
+				4AA40691133AF12900692288 /* Ground.mm */,
+				4AA40693133AF20E00692288 /* Exit.h */,
+				4AA40694133AF20F00692288 /* Exit.mm */,
 			);
 			name = SceenBoundry;
 			sourceTree = "<group>";
@@ -950,6 +963,8 @@
 			children = (
 				4ACDB30E132F23380082F084 /* Player.h */,
 				4ACDB30F132F23380082F084 /* Player.mm */,
+				4AA40696133AFE0300692288 /* PlayerLife.h */,
+				4AA40697133AFE0300692288 /* PlayerLife.mm */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -1734,11 +1749,14 @@
 				4ACDB32B132F27440082F084 /* Alien.mm in Sources */,
 				4ACDB32F132F27C10082F084 /* PlayerWeaponObject.mm in Sources */,
 				4A50FB9E132F295100C8BBC3 /* EnemyObject.mm in Sources */,
-				28D504AF1330480700A1B9C7 /* ScreenBoundry.mm in Sources */,
+				28D504AF1330480700A1B9C7 /* ScreenBoundryObject.mm in Sources */,
 				28D504CB133060B200A1B9C7 /* GroundEnemyObject.mm in Sources */,
 				4A019B82133144BB0096223F /* FlyingEnemyObject.mm in Sources */,
 				287B972513315D4300A7BC66 /* PhysicalBullet.mm in Sources */,
 				4AE24A211339D7CA005B926C /* CannonObject.mm in Sources */,
+				4AA40692133AF12A00692288 /* Ground.mm in Sources */,
+				4AA40695133AF21200692288 /* Exit.mm in Sources */,
+				4AA40698133AFE0400692288 /* PlayerLife.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

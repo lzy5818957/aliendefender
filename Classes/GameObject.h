@@ -12,12 +12,16 @@
 #import "GameConfig.h"
 
 enum GameObjectType {
-    TypeGroundBoundry,
+    TypeGround,
+    TypeExit,
+    
 	TypeAlien,
     
     TypePhysicalBullet,
     
-    TypeCannon
+    TypeCannon,
+    TypeLife
+    
 };
 
 @interface GameObject : NSObject {

@@ -11,7 +11,8 @@
 
 @implementation GameWorld
 
-@synthesize world, m_debugDraw, delegate, gameObjectReadyQueue, weaponArray, player, _contactListener,toBeRemovedArray,currentOnSceneArray;
+@synthesize world, m_debugDraw, delegate, gameObjectReadyQueue, weaponArray, player, _contactListener,
+            toBeRemovedArray,currentOnSceneArray, boundry, exit;
 -(GameWorld *)init
 {
 	[super init];
@@ -66,13 +67,17 @@
 
 -(void)initBoundry
 {
-    boundry = [[ScreenBoundry alloc] init];
+    boundry = [[Ground alloc] init];
+    exit = [[Exit alloc] init];
+    
 	[self realizeGameObject:boundry];
+    [self realizeGameObject:exit];
 }
 
 -(void)initPlayer
 {
     player = [[[Player alloc] init] retain];
+    ((Exit*)exit).delegate = player;
     
 }
 
@@ -117,6 +122,7 @@
 {
 
     [self realizeGameObject:[player cannon]];
+    [self realizeGameObject:[player playerLife]];
 
 }
 -(void)cleanUpDeadGameObject
@@ -170,92 +176,18 @@
         
 		[myActor update];
 
-        /*
-        switch (myActor.type) 
-        {
-            case TypeAlien:
-                [myActor update];
-                break;
-                
-            default:
-                break;
-        }
-		*/	
 	}
     
     [self emitWeapon];
-	[self handleContact];
     [self cleanUpDeadGameObject];
 	
-}
-
--(void)handleContact
-{
-    
-    std::vector<MyContact>::iterator pos;
-	
-	for(pos = _contactListener->_contacts.begin(); 
-		pos != _contactListener->_contacts.end(); ++pos) 
-	{
-		MyContact contact = *pos;
-        GameObject *fixtureAGameObject;
-		GameObject *fixtureBGameObject;
-        
-		fixtureAGameObject = (GameObject *)(contact.fixtureA->GetUserData());
-		fixtureBGameObject = (GameObject *)(contact.fixtureB->GetUserData());
-        if (fixtureAGameObject != NULL && fixtureBGameObject != NULL) {
-            if (
-                (fixtureAGameObject.type == TypePhysicalBullet && fixtureBGameObject.type == TypeAlien )
-                ||
-                (fixtureAGameObject.type == TypeAlien  && fixtureBGameObject.type == TypePhysicalBullet)
-                ) 
-            {
-                /*
-
-				*/
-                if(fixtureAGameObject.type == TypePhysicalBullet)
-                {
-                    [fixtureAGameObject setHealth:0];
-                    [fixtureBGameObject damage:((PlayerWeaponObject*)fixtureAGameObject).attack];
-                }
-                else
-                {
-                    [fixtureBGameObject setHealth:0];
-                    [fixtureAGameObject damage:((PlayerWeaponObject*)fixtureBGameObject).attack];
-                }
-				
-				[fixtureBGameObject setToBeRemoved:YES];
-				
-            }
-            if (
-                (fixtureAGameObject.type == TypePhysicalBullet && fixtureBGameObject.type == TypeGroundBoundry )
-                ||
-                (fixtureAGameObject.type == TypeGroundBoundry  && fixtureBGameObject.type == TypePhysicalBullet)
-                ) 
-            {
-                /*
-                 
-                 */
-                if(fixtureAGameObject.type == TypePhysicalBullet)
-                {
-                    [fixtureAGameObject setToBeRemoved:YES];
-                }
-                else
-                {
-                    [fixtureBGameObject setToBeRemoved:YES];
-                }
-				
-            }
-        }
-		
-
-	}
-
 }
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
+    [boundry release];
+    [exit release];
 	[gameObjectReadyQueue release];
 	[currentOnSceneArray release];
 	[toBeRemovedArray release];

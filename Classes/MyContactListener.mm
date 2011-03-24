@@ -32,7 +32,77 @@ void MyContactListener::EndContact(b2Contact* contact) {
 
 void MyContactListener::PreSolve(b2Contact* contact, 
 								 const b2Manifold* oldManifold) {
-               
+    GameObject *fixtureAGameObject;
+    GameObject *fixtureBGameObject;
+    
+    fixtureAGameObject = (GameObject *)(contact->GetFixtureA()->GetUserData());
+    fixtureBGameObject = (GameObject *)(contact->GetFixtureB()->GetUserData());
+    if (fixtureAGameObject != NULL && fixtureBGameObject != NULL) {
+        
+        //Physical Bullet vs Alien
+        if (
+            (fixtureAGameObject.type == TypePhysicalBullet && fixtureBGameObject.type == TypeAlien )
+            ||
+            (fixtureAGameObject.type == TypeAlien  && fixtureBGameObject.type == TypePhysicalBullet)
+            ) 
+        {
+
+            if(fixtureAGameObject.type == TypePhysicalBullet)
+            {
+                [fixtureAGameObject setHealth:0];
+                [fixtureBGameObject damage:((PlayerWeaponObject*)fixtureAGameObject).attack];
+            }
+            else
+            {
+                [fixtureBGameObject setHealth:0];
+                [fixtureAGameObject damage:((PlayerWeaponObject*)fixtureBGameObject).attack];
+            }
+            
+            
+        }
+        
+        //Physical Bullet vs Ground
+        if (
+            (fixtureAGameObject.type == TypePhysicalBullet && fixtureBGameObject.type == TypeGround )
+            ||
+            (fixtureAGameObject.type == TypeGround  && fixtureBGameObject.type == TypePhysicalBullet)
+            ) 
+        {
+
+            if(fixtureAGameObject.type == TypePhysicalBullet)
+            {
+                [fixtureAGameObject setToBeRemoved:YES];
+            }
+            else
+            {
+                [fixtureBGameObject setToBeRemoved:YES];
+            }
+            
+        }
+        
+        //Exit vs Alien
+        if (
+            (fixtureAGameObject.type == TypeAlien && fixtureBGameObject.type == TypeExit )
+            ||
+            (fixtureAGameObject.type == TypeExit  && fixtureBGameObject.type == TypeAlien)
+            ) 
+        {
+            
+            if(fixtureAGameObject.type == TypeAlien)
+            {
+                [((Exit*)fixtureBGameObject) enemyDidPassExit];
+                [fixtureAGameObject setToBeRemoved:YES];
+                
+            }
+            else
+            {
+                [((Exit*)fixtureAGameObject) enemyDidPassExit];
+                [fixtureBGameObject setToBeRemoved:YES];
+            }
+            
+        }
+    }
+    
 }
 
 void MyContactListener::PostSolve(b2Contact* contact, 
