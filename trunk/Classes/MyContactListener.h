@@ -1,6 +1,11 @@
 #import "Box2D.h"
+#import "cocos2d.h"
 #import <vector>
 #import <algorithm>
+
+#import "GameObject.h"
+#import "PlayerWeaponObject.h"
+#import "Exit.h"
 
 struct MyContact {
     b2Fixture *fixtureA;

@@ -11,7 +11,7 @@
 
 @implementation Player
 
-@synthesize currentWeaponType, cannon;
+@synthesize currentWeaponType, cannon, playerLife;
 
 -(id)init
 {
@@ -20,6 +20,7 @@
     currentWeaponType = TypePhysicalBullet;
     //place the cannon in the middle of screen
     cannon = [[CannonObject alloc] initWithCoords:CGPointMake(20, [CCDirector sharedDirector].winSize.height/2)];
+    playerLife = [[PlayerLife alloc] initWithCoords:CGPointMake(40, 300)];
     return self;
 }
 -(PlayerWeaponObject*)loadWeaponCharge:(double) charge Direction:(CGPoint)dir
@@ -37,8 +38,14 @@
     return weapon;
 }
 
+-(void)playerLoseALife
+{
+    playerLife.life -= 1;
+}
+
 -(void)dealloc
 {
+    [playerLife release];
     [cannon release];
     [super dealloc];
 }

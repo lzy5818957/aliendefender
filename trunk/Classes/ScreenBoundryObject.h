@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GameObject.h"
 
-@interface ScreenBoundry : GameObject {
+@interface ScreenBoundryObject : GameObject {
     
 }
 
