@@ -27,7 +27,7 @@
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
     type = TypeAlien;
-    speed = [[NSNumber numberWithFloat:3.0f] retain];
+    speed = 3.0;
     
     
 	return self;
@@ -45,7 +45,6 @@
 
 -(void)dealloc
 {
-    [speed release];
     
     [super dealloc];
 }

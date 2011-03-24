@@ -11,15 +11,15 @@
 
 @interface WaveObject : NSObject {
 
-	NSNumber *numberOfEnemies;
-	NSNumber *difficulty;
+	int numberOfEnemies;
+	float difficulty;
 	GameObjectType gameObjectType;
 	
 }
 
-@property(nonatomic,retain) NSNumber *numberOfEnemies;
-@property(nonatomic,retain) NSNumber *difficulty;
+@property(nonatomic,readwrite) int numberOfEnemies;
+@property(nonatomic,readwrite) float difficulty;
 @property(nonatomic,readwrite) GameObjectType gameObjectType;
-+(id)waveWithnumberOfEnemy: (NSNumber *)number Difficulty:(NSNumber *)diff Type:(GameObjectType)gOType;
--(id)initWithnumberOfEnemy: (NSNumber *)number Difficulty:(NSNumber *)diff Type:(GameObjectType)gOType;
++(id)waveWithnumberOfEnemy: (int)number Difficulty:(float)diff Type:(GameObjectType)gOType;
+-(id)initWithnumberOfEnemy: (int)number Difficulty:(float)diff Type:(GameObjectType)gOType;
 @end

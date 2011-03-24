@@ -16,7 +16,7 @@
 		NSArray *waves;
 }
 @property(nonatomic,retain)	NSArray *waves;
-+(id)levelWithLevelNumber:(NSNumber *)levelNumber;
--(id)initWithLevelNumber:(NSNumber *)levelNumber;
++(id)levelWithLevelNumber:(int)levelNumber;
+-(id)initWithLevelNumber:(int)levelNumber;
 -(NSMutableArray *)generateGameObject;
 @end

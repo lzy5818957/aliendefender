@@ -15,13 +15,13 @@
 
 
 
-+(id)waveWithnumberOfEnemy: (NSNumber *)number Difficulty:(NSNumber *)diff Type:(GameObjectType)gOType
++(id)waveWithnumberOfEnemy: (int)number Difficulty:(float)diff Type:(GameObjectType)gOType
 {
 	return [[[self alloc] initWithnumberOfEnemy:number Difficulty:diff Type:gOType] autorelease];
 	
 }
 
--(id)initWithnumberOfEnemy: (NSNumber *)number Difficulty:(NSNumber *)diff Type:(GameObjectType)gOType
+-(id)initWithnumberOfEnemy: (int)number Difficulty:(float)diff Type:(GameObjectType)gOType
 {
 	[super init];
 	[self setNumberOfEnemies:number];
@@ -35,9 +35,7 @@
 - (void) dealloc
 {
 		
-	[numberOfEnemies release];
-	[difficulty release];
-		
+
 	// don't forget to call "super dealloc"
 	[super dealloc];
 }

@@ -12,6 +12,13 @@
 @implementation EnemyObject
 @synthesize speed;
 
+-(id)init
+{
+    self = [super init];
+
+    return self;
+}
+
 - (void) dealloc
 {
 	// don't forget to call "super dealloc"
