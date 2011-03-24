@@ -25,13 +25,16 @@
 
 -(void)update
 {
-    //dead update
-    if (health <=0 ) {
-        [self setToBeRemoved:true];
-    }
     
     //position update
     sprite.position = CGPointMake( body->GetPosition().x * PTM_RATIO, body->GetPosition().y * PTM_RATIO);
+    
+    //dead update
+    if (health <=0 || sprite.position.x < 0 || sprite.position.y < 0) {
+        [self setToBeRemoved:true];
+    }
+    
+
 
 }
 -(void)damage:(int)amount
