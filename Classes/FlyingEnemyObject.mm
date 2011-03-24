@@ -11,9 +11,27 @@
 
 @implementation FlyingEnemyObject
 
+-(id)init
+{
+    self = [super init];
+    fixtureDef.filter.groupIndex = -3;
+    return self;
+}
+
+-(void)move
+{
+    
+    if (sprite.position.y <= 298) 
+    {
+        
+        body->ApplyForce(b2Vec2(0,10),body->GetWorldCenter());
+    }
+    
+}
 -(void)update
 {
     [super update];
 
 }
+
 @end

@@ -104,9 +104,9 @@
 	// Instruct the world to perform a single step of simulation. It is
 	// generally best to keep the time step and iterations fixed.
 	gameWorld.world->Step(dt, velocityIterations, positionIterations);
-	
-	
+
 	[gameWorld update:dt];
+    
 
 }
 
