@@ -83,7 +83,7 @@
 
 -(void)emitEnemy
 {
-    
+    //randomly take an enemy from ready queue and emit it
     if([gameObjectReadyQueue count] != 0)
     {
         int r = arc4random() % [gameObjectReadyQueue count];

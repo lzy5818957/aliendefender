@@ -18,6 +18,7 @@
 		4AA40692133AF12A00692288 /* Ground.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40691133AF12900692288 /* Ground.mm */; };
 		4AA40695133AF21200692288 /* Exit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40694133AF20F00692288 /* Exit.mm */; };
 		4AA40698133AFE0400692288 /* PlayerLife.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40697133AFE0300692288 /* PlayerLife.mm */; };
+		4AA4069B133B185E00692288 /* UFO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4069A133B185C00692288 /* UFO.mm */; };
 		4ACDB28E132EEB0F0082F084 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB28D132EEB0F0082F084 /* MyContactListener.mm */; };
 		4ACDB294132EED6A0082F084 /* GameWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB293132EED6A0082F084 /* GameWorld.mm */; };
 		4ACDB2C3132EF1920082F084 /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB2C2132EF1920082F084 /* GameScene.mm */; };
@@ -374,6 +375,8 @@
 		4AA40694133AF20F00692288 /* Exit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Exit.mm; sourceTree = "<group>"; };
 		4AA40696133AFE0300692288 /* PlayerLife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerLife.h; sourceTree = "<group>"; };
 		4AA40697133AFE0300692288 /* PlayerLife.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerLife.mm; sourceTree = "<group>"; };
+		4AA40699133B185B00692288 /* UFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFO.h; sourceTree = "<group>"; };
+		4AA4069A133B185C00692288 /* UFO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UFO.mm; sourceTree = "<group>"; };
 		4ACDB28C132EEB0F0082F084 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
 		4ACDB28D132EEB0F0082F084 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 		4ACDB292132EED6A0082F084 /* GameWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorld.h; sourceTree = "<group>"; };
@@ -996,6 +999,8 @@
 			children = (
 				4A019B80133144BB0096223F /* FlyingEnemyObject.h */,
 				4A019B81133144BB0096223F /* FlyingEnemyObject.mm */,
+				4AA40699133B185B00692288 /* UFO.h */,
+				4AA4069A133B185C00692288 /* UFO.mm */,
 			);
 			name = FlyingEnemyObject;
 			sourceTree = "<group>";
@@ -1757,6 +1762,7 @@
 				4AA40692133AF12A00692288 /* Ground.mm in Sources */,
 				4AA40695133AF21200692288 /* Exit.mm in Sources */,
 				4AA40698133AFE0400692288 /* PlayerLife.mm in Sources */,
+				4AA4069B133B185E00692288 /* UFO.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,7 @@
 	fixtureDef.shape = &shape;
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
-    fixtureDef.filter.groupIndex = -1;
+    fixtureDef.isSensor = true;
     type = TypeCannon;
 
 	return self;

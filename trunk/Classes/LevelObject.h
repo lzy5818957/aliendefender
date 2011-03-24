@@ -10,12 +10,13 @@
 #import "WaveObject.h"
 #import "GameObject.h"
 #import "Alien.h"
+#import "UFO.h"
 
 @interface LevelObject : NSObject {
 
-		NSArray *waves;
+		NSMutableArray *waves;
 }
-@property(nonatomic,retain)	NSArray *waves;
+@property(nonatomic,retain)	NSMutableArray *waves;
 +(id)levelWithLevelNumber:(int)levelNumber;
 -(id)initWithLevelNumber:(int)levelNumber;
 -(NSMutableArray *)generateGameObject;

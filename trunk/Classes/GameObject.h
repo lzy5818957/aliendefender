@@ -16,7 +16,7 @@ enum GameObjectType {
     TypeExit,
     
 	TypeAlien,
-    
+    TypeUFO,
     TypePhysicalBullet,
     
     TypeCannon,

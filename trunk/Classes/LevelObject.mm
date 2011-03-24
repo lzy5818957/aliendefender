@@ -20,10 +20,16 @@
 }
 -(id)initWithLevelNumber:(int)levelNumber
 {
+    waves = [NSMutableArray arrayWithCapacity:0];
 	[super init];
     if (levelNumber == 1) {
+        
         //will give definition of level later
-        waves = [NSMutableArray arrayWithObject:[WaveObject waveWithnumberOfEnemy:10 Difficulty:1.2 Type:TypeAlien]];
+        WaveObject *wave1 = [WaveObject waveWithnumberOfEnemy:10 Difficulty:1.2 Type:TypeAlien];
+        WaveObject *wave2 = [WaveObject waveWithnumberOfEnemy:10 Difficulty:0.3 Type:TypeUFO];
+
+        [waves addObject:wave1];
+        [waves addObject:wave2];
     }
 
 	
@@ -49,7 +55,15 @@
                     
 				}
 				break;
-				
+            case TypeUFO:
+				for (int i = 0; i < wave.numberOfEnemies ; i++) 
+				{
+                    GameObject *gameObject = [[[UFO alloc] initWithCoords:CGPointMake(screenSize.width, 300)] autorelease];
+					[gameObjectArray addObject: gameObject];
+                    gameObject.health = (gameObject.health)*(wave.difficulty);
+                    
+				}
+				break;	
 			default:
 				break;
 		}
