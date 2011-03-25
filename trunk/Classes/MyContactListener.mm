@@ -39,15 +39,15 @@ void MyContactListener::PreSolve(b2Contact* contact,
     fixtureBGameObject = (GameObject *)(contact->GetFixtureB()->GetUserData());
     if (fixtureAGameObject != NULL && fixtureBGameObject != NULL) {
         
-        //Physical Bullet vs Alien
+        //Weapon vs Enemy
         if (
-            (fixtureAGameObject.type == TypePhysicalBullet && fixtureBGameObject.type == TypeAlien )
+            ([fixtureAGameObject isKindOfClass:[PlayerWeaponObject class]] && [fixtureBGameObject isKindOfClass:[EnemyObject class]] )
             ||
-            (fixtureAGameObject.type == TypeAlien  && fixtureBGameObject.type == TypePhysicalBullet)
+            ([fixtureAGameObject isKindOfClass:[EnemyObject class]] && [fixtureBGameObject isKindOfClass:[PlayerWeaponObject class]])
             ) 
         {
-
-            if(fixtureAGameObject.type == TypePhysicalBullet)
+            
+            if ([fixtureAGameObject isKindOfClass:[PlayerWeaponObject class]])
             {
                 [fixtureAGameObject setHealth:0];
                 [fixtureBGameObject damage:((PlayerWeaponObject*)fixtureAGameObject).attack];
@@ -60,36 +60,16 @@ void MyContactListener::PreSolve(b2Contact* contact,
             
             
         }
-        //Physical Bullet vs UFO
+        
+        //Weapon vs Ground
         if (
-            (fixtureAGameObject.type == TypePhysicalBullet && fixtureBGameObject.type == TypeUFO )
+            ([fixtureAGameObject isKindOfClass:[PlayerWeaponObject class]] && [fixtureBGameObject isKindOfClass:[ScreenBoundryObject class]] )
             ||
-            (fixtureAGameObject.type == TypeUFO  && fixtureBGameObject.type == TypePhysicalBullet)
-            ) 
-        {
-            
-            if(fixtureAGameObject.type == TypePhysicalBullet)
-            {
-                [fixtureAGameObject setHealth:0];
-                [fixtureBGameObject damage:((PlayerWeaponObject*)fixtureAGameObject).attack];
-            }
-            else
-            {
-                [fixtureBGameObject setHealth:0];
-                [fixtureAGameObject damage:((PlayerWeaponObject*)fixtureBGameObject).attack];
-            }
-            
-            
-        }
-        //Physical Bullet vs Ground
-        if (
-            (fixtureAGameObject.type == TypePhysicalBullet && fixtureBGameObject.type == TypeGround )
-            ||
-            (fixtureAGameObject.type == TypeGround  && fixtureBGameObject.type == TypePhysicalBullet)
+            ([fixtureAGameObject isKindOfClass:[ScreenBoundryObject class]] && [fixtureBGameObject isKindOfClass:[PlayerWeaponObject class]])
             ) 
         {
 
-            if(fixtureAGameObject.type == TypePhysicalBullet)
+            if([fixtureAGameObject isKindOfClass:[PlayerWeaponObject class]])
             {
                 [fixtureAGameObject setToBeRemoved:YES];
             }
@@ -102,13 +82,13 @@ void MyContactListener::PreSolve(b2Contact* contact,
         
         //Exit vs Alien
         if (
-            (fixtureAGameObject.type == TypeAlien && fixtureBGameObject.type == TypeExit )
+            ([fixtureAGameObject isKindOfClass:[EnemyObject class]] && [fixtureBGameObject isKindOfClass:[Exit class]] )
             ||
-            (fixtureAGameObject.type == TypeExit  && fixtureBGameObject.type == TypeAlien)
+            ([fixtureAGameObject isKindOfClass:[Exit class]] && [fixtureBGameObject isKindOfClass:[EnemyObject class]])
             ) 
         {
             
-            if(fixtureAGameObject.type == TypeAlien)
+            if([fixtureAGameObject isKindOfClass:[EnemyObject class]])
             {
                 [((Exit*)fixtureBGameObject) enemyDidPassExit];
                 [fixtureAGameObject setToBeRemoved:YES];
@@ -122,27 +102,6 @@ void MyContactListener::PreSolve(b2Contact* contact,
             
         }
         
-        //Exit vs UFO
-        if (
-            (fixtureAGameObject.type == TypeUFO && fixtureBGameObject.type == TypeExit )
-            ||
-            (fixtureAGameObject.type == TypeExit  && fixtureBGameObject.type == TypeUFO)
-            ) 
-        {
-            
-            if(fixtureAGameObject.type == TypeUFO)
-            {
-                [((Exit*)fixtureBGameObject) enemyDidPassExit];
-                [fixtureAGameObject setToBeRemoved:YES];
-                
-            }
-            else
-            {
-                [((Exit*)fixtureAGameObject) enemyDidPassExit];
-                [fixtureBGameObject setToBeRemoved:YES];
-            }
-            
-        }
     }
     
 }

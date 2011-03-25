@@ -11,7 +11,7 @@
 
 @implementation GameObject
 
-@synthesize sprite, bodyDef, body, fixture, fixtureDef, shape ,type ,toBeRemoved, texture, health;
+@synthesize sprite, bodyDef, body, fixture, fixtureDef, shape ,toBeRemoved, texture, health;
 
 -(id)init
 {

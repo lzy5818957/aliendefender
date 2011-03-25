@@ -25,7 +25,7 @@
     shape.SetAsEdge(b2Vec2(0,screenSize.height/PTM_RATIO), b2Vec2(0,0));
 	fixtureDef.shape = &shape;
     //fixtureDef.isSensor = true;
-    type = TypeExit;
+
     
     
     return self;

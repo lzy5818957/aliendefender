@@ -22,7 +22,7 @@
     shape.SetAsEdge(b2Vec2(0,0.5), b2Vec2(screenSize.width/PTM_RATIO+100,0.5));
 	fixtureDef.shape = &shape;
     
-    type = TypeGround;
+
     
     
     return self;

@@ -11,18 +11,6 @@
 #import "Box2D.h"
 #import "GameConfig.h"
 
-enum GameObjectType {
-    TypeGround,
-    TypeExit,
-    
-	TypeAlien,
-    TypeUFO,
-    TypePhysicalBullet,
-    
-    TypeCannon,
-    TypeLife
-    
-};
 
 @interface GameObject : NSObject {
 
@@ -34,7 +22,7 @@ enum GameObjectType {
 	b2BodyDef bodyDef;
 	b2FixtureDef fixtureDef;
 	b2PolygonShape shape;
-	GameObjectType type;
+
 	Boolean toBeRemoved;
     CCTexture2D *texture;
     float health;
@@ -48,7 +36,7 @@ enum GameObjectType {
 @property (nonatomic,readwrite) b2Fixture *fixture;
 @property (nonatomic,readwrite) b2PolygonShape shape;
 @property (nonatomic,readwrite) b2FixtureDef fixtureDef;
-@property (nonatomic,readwrite) GameObjectType type;
+
 @property (nonatomic,readwrite) Boolean toBeRemoved;
 @property (nonatomic,retain) CCTexture2D *texture;
 @property (nonatomic,readwrite) float health;

@@ -12,6 +12,7 @@
 @implementation BulletObject
 @synthesize charge, direction;
 
+
 -(void)update
 {
     [super update];

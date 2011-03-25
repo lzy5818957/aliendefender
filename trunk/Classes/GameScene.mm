@@ -125,7 +125,7 @@
 
 	//Add a new body/atlas sprite at the touched location
 	for( UITouch *touch in touches ) {
-        
+
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
@@ -136,18 +136,10 @@
         {
             rTouchStartLocation = [touch locationInView:[touch view]];
         }
-       
 
-        
-	}
-    // <--this gets all the current touches
-    NSSet *allTouches = [event allTouches];  
-     //iterate through all the touches
-	for (UITouch *touch in allTouches) { 
 
-	//	CCLOG(@"X: %f, Y: %f",[touch previousLocationInView:touch.view].x,[touch previousLocationInView:touch.view].y); 
-        
 	}
+    
 }
 
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -155,7 +147,8 @@
 
 
     for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
+
+        CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
         if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
@@ -168,9 +161,14 @@
             b2Vec2 pos = gameWorld.player.cannon.body->GetPosition();
             gameWorld.player.cannon.body->SetTransform(pos, angle);
             
+            //Radius to CGPoint 
+            weaponDirection = ccpForAngle(angle);
+            
         }
-    }
+        
 
+    }
+    
 }
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -180,11 +178,12 @@
     //NSLog(@"Touch duration: %3.2f seconds", touchTimeDuration);
     
     for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
+
+        CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
         if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
-
+            
             //fire weapon
             PlayerWeaponObject *weapon = [gameWorld.player loadWeaponCharge:chargeTimer*4  Direction:weaponDirection];
             chargeTimer = 1;
@@ -194,28 +193,10 @@
         else
         {
 
-            
-            //  We find the vector to do a hit detection based on the percentage
-            //  We know the first vector is the one @ 12 o'clock (top,mid) so we rotate
-            //  from that by the progress angle around the midpoint pivot
-            weaponDirection = ccpForAngle(angle);
         }
-    
-        
+
 
 	}
-    /*
-    // <--this gets all the current touches
-    NSSet *allTouches = [event allTouches]; 
-    //iterate through all the touches
-   
-	for (UITouch *touch in allTouches) { 
-        
-    //CCLOG(@"X: %f, Y: %f",[touch previousLocationInView:touch.view].x,[touch previousLocationInView:touch.view].y); 
-        
-	}
-    */
-
 
 }
 

@@ -13,13 +13,13 @@
 
 	int numberOfEnemies;
 	float difficulty;
-	GameObjectType gameObjectType;
+	Class enemyType;
 	
 }
 
 @property(nonatomic,readwrite) int numberOfEnemies;
 @property(nonatomic,readwrite) float difficulty;
-@property(nonatomic,readwrite) GameObjectType gameObjectType;
-+(id)waveWithnumberOfEnemy: (int)number Difficulty:(float)diff Type:(GameObjectType)gOType;
--(id)initWithnumberOfEnemy: (int)number Difficulty:(float)diff Type:(GameObjectType)gOType;
+@property(nonatomic,retain) Class enemyType;
++(id)waveWithnumberOfEnemy: (int)number Difficulty:(float)diff Type:(Class)gOSubType;
+-(id)initWithnumberOfEnemy: (int)number Difficulty:(float)diff Type:(Class)gOSubType;
 @end
