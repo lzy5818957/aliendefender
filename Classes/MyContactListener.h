@@ -4,7 +4,11 @@
 #import <algorithm>
 
 #import "GameObject.h"
+#import "ScreenBoundryObject.h"
 #import "PlayerWeaponObject.h"
+#import "EnemyObject.h"
+#import "Ground.h"
+#import "Exit.h"
 #import "Exit.h"
 
 struct MyContact {

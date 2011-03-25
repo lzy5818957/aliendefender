@@ -10,18 +10,19 @@
 #import "GameObject.h"
 #import "PlayerWeaponObject.h"
 #import "PhysicalBullet.h"
+#import "ControllableBullet.h"
 #import "CannonObject.h"
 #import "PlayerLife.h"
 #import "Exit.h"
 @interface Player : NSObject <ExitDelegate> {
 
-    GameObjectType currentWeaponType;
+    Class currentWeaponType;
     CannonObject *cannon;
     PlayerLife *playerLife;
     
 }
 
-@property (nonatomic,readwrite) GameObjectType currentWeaponType;
+@property (nonatomic,retain) Class currentWeaponType;
 @property (nonatomic,retain) CannonObject *cannon;
 @property (nonatomic,retain) PlayerLife *playerLife;
 -(PlayerWeaponObject*)loadWeaponCharge:(double) charge Direction:(CGPoint)dir;

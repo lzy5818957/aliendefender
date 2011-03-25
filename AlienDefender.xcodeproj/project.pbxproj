@@ -19,6 +19,7 @@
 		4AA40695133AF21200692288 /* Exit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40694133AF20F00692288 /* Exit.mm */; };
 		4AA40698133AFE0400692288 /* PlayerLife.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40697133AFE0300692288 /* PlayerLife.mm */; };
 		4AA4069B133B185E00692288 /* UFO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4069A133B185C00692288 /* UFO.mm */; };
+		4AC9C50B133C2F1A00FB8C51 /* ControllableBullet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9C50A133C2F1A00FB8C51 /* ControllableBullet.mm */; };
 		4ACDB28E132EEB0F0082F084 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB28D132EEB0F0082F084 /* MyContactListener.mm */; };
 		4ACDB294132EED6A0082F084 /* GameWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB293132EED6A0082F084 /* GameWorld.mm */; };
 		4ACDB2C3132EF1920082F084 /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDB2C2132EF1920082F084 /* GameScene.mm */; };
@@ -377,6 +378,8 @@
 		4AA40697133AFE0300692288 /* PlayerLife.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerLife.mm; sourceTree = "<group>"; };
 		4AA40699133B185B00692288 /* UFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFO.h; sourceTree = "<group>"; };
 		4AA4069A133B185C00692288 /* UFO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UFO.mm; sourceTree = "<group>"; };
+		4AC9C509133C2F1A00FB8C51 /* ControllableBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ControllableBullet.h; sourceTree = "<group>"; };
+		4AC9C50A133C2F1A00FB8C51 /* ControllableBullet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllableBullet.mm; sourceTree = "<group>"; };
 		4ACDB28C132EEB0F0082F084 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
 		4ACDB28D132EEB0F0082F084 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 		4ACDB292132EED6A0082F084 /* GameWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorld.h; sourceTree = "<group>"; };
@@ -922,6 +925,15 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		4AC9C508133C2ED900FB8C51 /* ControlableBullet */ = {
+			isa = PBXGroup;
+			children = (
+				4AC9C509133C2F1A00FB8C51 /* ControllableBullet.h */,
+				4AC9C50A133C2F1A00FB8C51 /* ControllableBullet.mm */,
+			);
+			name = ControlableBullet;
+			sourceTree = "<group>";
+		};
 		4ACDB24E132EE2F20082F084 /* Level */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,6 +1031,7 @@
 		4ACDB32C132F27770082F084 /* BulletObject */ = {
 			isa = PBXGroup;
 			children = (
+				4AC9C508133C2ED900FB8C51 /* ControlableBullet */,
 				287B972113315D1E00A7BC66 /* PhysicalBullet */,
 				4ACDB321132F26ED0082F084 /* BulletObject.h */,
 				4ACDB322132F26ED0082F084 /* BulletObject.mm */,
@@ -1763,6 +1776,7 @@
 				4AA40695133AF21200692288 /* Exit.mm in Sources */,
 				4AA40698133AFE0400692288 /* PlayerLife.mm in Sources */,
 				4AA4069B133B185E00692288 /* UFO.mm in Sources */,
+				4AC9C50B133C2F1A00FB8C51 /* ControllableBullet.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

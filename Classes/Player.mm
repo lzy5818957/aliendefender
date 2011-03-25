@@ -17,7 +17,7 @@
 {
     self = [super init];
     //setDefaultWeapon
-    currentWeaponType = TypePhysicalBullet;
+    currentWeaponType = [ControllableBullet class];
     //place the cannon in the middle of screen
     cannon = [[CannonObject alloc] initWithCoords:CGPointMake(20, [CCDirector sharedDirector].winSize.height/2)];
     playerLife = [[PlayerLife alloc] initWithCoords:CGPointMake(40, 300)];
@@ -26,15 +26,20 @@
 -(PlayerWeaponObject*)loadWeaponCharge:(double) charge Direction:(CGPoint)dir
 {
     PlayerWeaponObject* weapon;
-    if(currentWeaponType == TypePhysicalBullet)
+    if(currentWeaponType == [PhysicalBullet class])
     {
-        //Normallize CGpoint
-        CGPoint direction = CGPointMake(dir.x/(pow(dir.x, 2)+(pow(dir.y, 2))), dir.y/(pow(dir.x, 2)+(pow(dir.y, 2))));
 
-        weapon = [[PhysicalBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge Direction:direction ];
+
+        weapon = [[PhysicalBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge Direction:dir ];
     
     }
-    
+    if(currentWeaponType == [ControllableBullet class])
+    {
+
+        
+        weapon = [[ControllableBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge Direction:dir ];
+        
+    }
     return weapon;
 }
 

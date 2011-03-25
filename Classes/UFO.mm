@@ -25,7 +25,7 @@
 	fixtureDef.shape = &shape;
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
-    type = TypeUFO;
+
     speed = 3.0;
     
     

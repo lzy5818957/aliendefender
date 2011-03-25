@@ -12,9 +12,17 @@
 @implementation PlayerWeaponObject
 @synthesize attack;
 
+-(id)init
+{
+    self = [super init];
+
+    return self;
+    
+}
 -(void)update
 {
     [super update];
+    
 
 }
 -(void)fire
