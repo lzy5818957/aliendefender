@@ -37,11 +37,23 @@
 -(void)update
 {
     [super update];
+    [self move];
+}
+-(void)move
+{
+    CGPoint controlForce = [Resource AcceValue];
+    body->ApplyForce(b2Vec2(0,body->GetMass()*10.1),body->GetWorldCenter());
+    
+    if (body->GetLinearVelocity().Length() <= 10)  {
+        body->ApplyForce(b2Vec2(0,controlForce.x*5),body->GetWorldCenter());
+
+    }
+    
 }
 -(void)fire
 {
     assert(body != nil);
-    CGPoint p = CGPointMake(direction.x*charge, direction.y*charge);
+    CGPoint p = CGPointMake(direction.x*charge/3, direction.y*charge);
     body->ApplyLinearImpulse(b2Vec2(p.x,p.y),body->GetWorldCenter());
     
 }

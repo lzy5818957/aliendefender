@@ -39,7 +39,7 @@
 		self.isTouchEnabled = YES;
 		
 		// enable accelerometer
-		self.isAccelerometerEnabled = NO;
+		self.isAccelerometerEnabled = YES;
 		
 		//set background color
 		//[self addChild:[CCColorLayer layerWithColor:ccc4(255, 255, 255, 255)]];
@@ -128,9 +128,12 @@
 
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
-        if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
+        if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
             chargeStart = YES;
             
+        }
+        else if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
+
         }
         else
         {
@@ -151,8 +154,12 @@
         CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
-        if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
+        if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
+
             
+        }
+        else if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
+
         }
         else
         {
@@ -182,14 +189,26 @@
         CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
-        if (location.x<=[CCDirector sharedDirector].winSize.width/2) {
-            
+        if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
             //fire weapon
             PlayerWeaponObject *weapon = [gameWorld.player loadWeaponCharge:chargeTimer*4  Direction:weaponDirection];
             chargeTimer = 1;
             chargeStart = NO;
             [[gameWorld weaponArray] addObject:weapon];
+            
         }
+        else if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
+
+            if (gameWorld.player.currentWeaponType == [PhysicalBullet class]) {
+                gameWorld.player.currentWeaponType = [ControllableBullet class];
+            }
+            else
+            {
+                gameWorld.player.currentWeaponType = [PhysicalBullet class];
+            }
+            
+        }
+
         else
         {
 
@@ -198,6 +217,27 @@
 
 	}
 
+}
+
+- (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
+{	
+	static float prevX=0, prevY=0;
+	
+	//#define kFilterFactor 0.05f
+#define kFilterFactor 1.0f	// don't use filter. the code is here just as an example
+	
+	float accelX = (float) acceleration.x * kFilterFactor + (1- kFilterFactor)*prevX;
+	float accelY = (float) acceleration.y * kFilterFactor + (1- kFilterFactor)*prevY;
+	
+	prevX = accelX;
+	prevY = accelY;
+	
+	// accelerometer values are in "Portrait" mode. Change them to Landscape left
+	// multiply the gravity by 10
+	//b2Vec2 gravity( -accelY * 10, accelX * 10);
+	//gameWorld.world->SetGravity( gravity );
+    
+    [Resource SetAcceValue:CGPointMake(-accelY, accelX)];
 }
 
 // on "dealloc" you need to release all your retained objects
