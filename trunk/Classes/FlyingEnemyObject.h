@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "EnemyObject.h"
 
+
 @interface FlyingEnemyObject : EnemyObject {
     
 }

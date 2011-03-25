@@ -30,7 +30,11 @@
     sprite.position = CGPointMake( body->GetPosition().x * PTM_RATIO, body->GetPosition().y * PTM_RATIO);
     
     //dead update
-    if (health <=0 || sprite.position.x < 0 || sprite.position.y < 0) {
+    CGSize winsize = [CCDirector sharedDirector].winSize;
+    //if the gameObject is dead or out of bound
+    if (health <= 0 || sprite.position.x < 0 || sprite.position.y < 0 ||
+        sprite.position.x > winsize.width + 50 || sprite.position.y > winsize.height + 30) 
+    {
         [self setToBeRemoved:true];
     }
     

@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BulletObject.h"
-
+#import "Resource.h"
 @interface ControllableBullet : BulletObject {
     
 }
 -(id)initWithCoords:(CGPoint)p Charge:(double)c Direction:(CGPoint)dir;
 -(void)update;
+-(void)move;
 -(void)fire;
 @end
