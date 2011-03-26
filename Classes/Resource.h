@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-static float accelX;
-static float accelY;
 
 
 @interface Resource : NSObject {

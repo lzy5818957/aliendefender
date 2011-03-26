@@ -8,6 +8,8 @@
 
 #import "Resource.h"
 
+static float accelX;
+static float accelY;
 
 
 @implementation Resource
