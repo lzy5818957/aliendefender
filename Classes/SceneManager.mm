@@ -2,8 +2,8 @@
 //  SceneManager.m
 //  SceneManager
 //
-//  Created by MajorTom on 9/7/10.
-//  Copyright iphonegametutorials.com 2010. All rights reserved.
+//  Created by Zunyi Lin on 11-03-14.
+//  Copyright 2011 University Of Saskatchewan. All rights reserved.
 //
 
 #import "SceneManager.h"
