@@ -11,7 +11,7 @@
 
 #import "RootViewController.h"
 #import "GameConfig.h"
-#import "GameScene.h"
+#import "SceneManager.h"
 
 @class RootViewController;
 

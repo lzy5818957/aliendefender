@@ -35,11 +35,7 @@
 {
 	if( (self=[super init])) {
 		
-		// enable touches
-		self.isTouchEnabled = YES;
-		
-		// enable accelerometer
-		self.isAccelerometerEnabled = YES;
+
 		
 		//set background color
 		//[self addChild:[CCColorLayer layerWithColor:ccc4(255, 255, 255, 255)]];
