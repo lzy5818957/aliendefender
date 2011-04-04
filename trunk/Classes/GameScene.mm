@@ -14,6 +14,10 @@
 
 @synthesize gameWorld, level, weaponDirection;
 
+#define ktagPauseBtn 0
+#define ktagPauseBG 1
+#define ktagPlayBtn 2
+#define ktagPauseMenu 3
 +(id) scene
 {
 	// 'scene' is an autorelease object.
@@ -60,10 +64,63 @@
         bg.position = ccp(240,160);
         [self addChild: bg z:-1];
 	}
+    
+    CCMenuItemImage *pause = [CCMenuItemImage  itemFromNormalImage:@"pauseBtn.png" selectedImage:@"pauseBtn_over.png" target:self selector:@selector(pause:)];
+	CCMenu *menu = [CCMenu menuWithItems: pause, nil];
+	
+	menu.position = ccp(15, 305);
+	[self addChild: menu z:1 tag:ktagPauseBtn];
+    
 	return self;
 }
 
+-(void) pause: (id) sender{
+    
 
+    [self removeChildByTag:ktagPauseBtn cleanup:YES];
+    
+    CCSprite *pauseScreen = [CCSprite spriteWithFile: @"pausebg.png"];
+    pauseScreen.position = ccp(240,160);
+    [self addChild: pauseScreen z:2 tag:ktagPauseBG];
+    
+    CCMenuItemImage *play = [CCMenuItemImage  itemFromNormalImage:@"playBtn.png" selectedImage:@"playBtn_over.png" target:self selector:@selector(play:)];
+	CCMenu *menu = [CCMenu menuWithItems: play, nil];
+	
+	menu.position = ccp(15, 305);
+	[self addChild: menu z:3 tag:ktagPlayBtn];
+    
+    //Pause menu
+    CCMenuItemFont *resume = [CCMenuItemFont itemFromString:@"RESUME" target:self selector: @selector(play:)];
+    CCMenuItemFont *mainMenu = [CCMenuItemFont itemFromString:@"MAIN MENU" target:self selector: @selector(back:)];
+
+	CCMenu *pauseMenu = [CCMenu menuWithItems:resume, mainMenu, nil];
+    
+    [self addChild: pauseMenu z:3 tag:ktagPauseMenu];
+    pauseMenu.position = ccp(240, 160);
+	[pauseMenu alignItemsVerticallyWithPadding: 40.0f];
+    
+    [[CCDirector sharedDirector] pause];
+    
+    
+}
+
+-(void) play: (id) sender{
+    
+    [self removeChildByTag:ktagPauseBG cleanup:YES];
+    [self removeChildByTag:ktagPlayBtn cleanup:YES];
+    [self removeChildByTag:ktagPauseMenu cleanup:YES];
+    
+    CCMenuItemImage *pause = [CCMenuItemImage  itemFromNormalImage:@"pauseBtn.png" selectedImage:@"pauseBtn_over.png" target:self selector:@selector(pause:)];
+	CCMenu *menu = [CCMenu menuWithItems: pause, nil];
+	
+	menu.position = ccp(15, 305);
+	[self addChild: menu z:1 tag:ktagPauseBtn];
+    [[CCDirector sharedDirector] resume];
+}
+-(void) back: (id) sender{
+    [[CCDirector sharedDirector] resume];
+	[SceneManager goMenu];
+}
 
 //delegate method
 -(void)graphicalRealize:(GameObject*)gameObject
@@ -76,6 +133,7 @@
 {
 
     [self removeChild:gameObject.sprite cleanup:true];
+    
 }
 -(void) draw
 {
