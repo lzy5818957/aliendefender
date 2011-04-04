@@ -384,7 +384,7 @@
 		4A1024AD13492A1800F31366 /* newGameBtn_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newGameBtn_over.png; sourceTree = "<group>"; };
 		4A1024AE13492A1800F31366 /* newGameBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newGameBtn.png; sourceTree = "<group>"; };
 		4A1024B413492A8400F31366 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		4A1024B613492B7300F31366 /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CreditsScene.h; sourceTree = "<group>"; };
+		4A1024B613492B7300F31366 /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsScene.h; sourceTree = "<group>"; };
 		4A1024B713492B7300F31366 /* CreditsScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreditsScene.mm; sourceTree = "<group>"; };
 		4A50FB9C132F295100C8BBC3 /* EnemyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyObject.h; sourceTree = "<group>"; };
 		4A50FB9D132F295100C8BBC3 /* EnemyObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EnemyObject.mm; sourceTree = "<group>"; };
@@ -884,6 +884,8 @@
 		4A6C3D86132F4E4900C39500 /* SpriteResource */ = {
 			isa = PBXGroup;
 			children = (
+				4AC87D28134958060091CA04 /* Enemy */,
+				4AC87D27134957F80091CA04 /* Bullet */,
 				4AE24A151339C3C3005B926C /* arrow.png */,
 				4A6C3D88132F4E5500C39500 /* ufo.png */,
 			);
@@ -985,6 +987,20 @@
 				E0F81061120A17DF005866B8 /* GameConfig.h */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		4AC87D27134957F80091CA04 /* Bullet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Bullet;
+			sourceTree = "<group>";
+		};
+		4AC87D28134958060091CA04 /* Enemy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Enemy;
 			sourceTree = "<group>";
 		};
 		4AC9C508133C2ED900FB8C51 /* ControlableBullet */ = {

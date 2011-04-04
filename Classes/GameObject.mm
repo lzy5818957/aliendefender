@@ -54,7 +54,6 @@
 -(void) dealloc
 {
 	[sprite release];
-    [texture release];
 	// don't forget to call "super dealloc"
 	[super dealloc];
 }

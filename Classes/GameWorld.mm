@@ -140,7 +140,7 @@
 
         world->DestroyBody(gameObject.body);
         [delegate graphicalRemove:gameObject];
-        if ([gameObject isMemberOfClass:[PlayerWeaponObject class]]) {
+        if ([gameObject isKindOfClass:[PlayerWeaponObject class]]) {
             [gameObject release];
         }
     }
