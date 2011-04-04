@@ -14,7 +14,7 @@
 {
     self = [super init];
     
-	texture = [[CCTexture2D alloc] initWithString:@"--->>>" fontName:@"Arial" fontSize:12.0f];
+	texture = [[Resource TextureDictionary] valueForKey:@"Cannon"];
     sprite = [[CCSprite spriteWithTexture:texture] retain];
 	sprite.position = p;
 	bodyDef.type = b2_staticBody;

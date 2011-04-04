@@ -11,12 +11,12 @@
 #import "MenuScene.h"
 #import "GameScene.h"
 #import "CreditsScene.h"
-
+#import "HelpScene.h"
 @interface SceneManager : NSObject {
 }
 
 +(void) goMenu;
 +(void) goPlay;
 +(void) goCredits;
-
++(void) goHelp;
 @end

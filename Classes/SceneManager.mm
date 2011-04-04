@@ -80,6 +80,10 @@ Class nextTransition()
 	CCLayer *layer = [CreditsScene node];
 	[SceneManager go: layer];
 }
++(void) goHelp{
+	CCLayer *layer = [HelpScene node];
+	[SceneManager go: layer];
+}
 
 +(void) go: (CCLayer *) layer{
 	CCDirector *director = [CCDirector sharedDirector];

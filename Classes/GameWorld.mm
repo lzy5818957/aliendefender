@@ -57,11 +57,11 @@
 	world->SetDebugDraw(m_debugDraw);
 	
 	uint32 flags = 0;
-	flags += b2DebugDraw::e_shapeBit;
-	flags += b2DebugDraw::e_jointBit;
-	flags += b2DebugDraw::e_aabbBit;
-	flags += b2DebugDraw::e_pairBit;
-	flags += b2DebugDraw::e_centerOfMassBit;
+	//flags += b2DebugDraw::e_shapeBit;
+	//flags += b2DebugDraw::e_jointBit;
+	//flags += b2DebugDraw::e_aabbBit;
+	//flags += b2DebugDraw::e_pairBit;
+	//flags += b2DebugDraw::e_centerOfMassBit;
 	m_debugDraw->SetFlags(flags);
 }
 

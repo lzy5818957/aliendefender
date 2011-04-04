@@ -32,18 +32,25 @@ static float accelY;
     if (textureDictionary == nil) {
         textureDictionary = [[NSMutableDictionary dictionaryWithCapacity:0] retain];
         
+        //add CannonTexture
+        CCTexture2D *cannonTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Arrow"]] autorelease];
+        [textureDictionary setValue:cannonTexture forKey:@"Cannon"];
+        
         //add PhysicalBulletTexture
-        CCTexture2D *physicalBulletTexture = [[CCTexture2D alloc] initWithImage:[UIImage imageNamed:@"Icon"]];
+        CCTexture2D *physicalBulletTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Bullet"]] autorelease];
         [textureDictionary setValue:physicalBulletTexture forKey:@"PhysicalBullet"];
         
         //add ControllableBulletTexture
-        CCTexture2D *controllableBulletTexture = [[CCTexture2D alloc] initWithString:@"ControllableBullet" 
-                                                                        fontName:@"Arial" 
-                                                                        fontSize:12.0f];
+        CCTexture2D *controllableBulletTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Bullet"]] autorelease];
         [textureDictionary setValue:controllableBulletTexture forKey:@"ControllableBullet"];
         
+        //add UFOTexture
+        CCTexture2D *ufoTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"ufo"]] autorelease];
+        [textureDictionary setValue:ufoTexture forKey:@"UFO"];
         
-        
+        //add AlienTexture
+        CCTexture2D *alienTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Alien"]] autorelease];
+        [textureDictionary setValue:alienTexture forKey:@"Alien"];
     }
     
     return textureDictionary;
