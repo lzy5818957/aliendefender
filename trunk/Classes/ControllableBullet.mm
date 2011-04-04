@@ -15,7 +15,7 @@
     
     self = [super init];
     attack = 80;
-	texture = [[CCTexture2D alloc] initWithString:@"ControllableBullet" fontName:@"Arial" fontSize:12.0f];
+	texture = [[Resource TextureDictionary] valueForKey:@"ControllableBullet"];
     sprite = [[CCSprite spriteWithTexture:texture] retain];
 	sprite.position = p;
 	bodyDef.type = b2_dynamicBody;
@@ -57,5 +57,8 @@
     body->ApplyLinearImpulse(b2Vec2(p.x,p.y),body->GetWorldCenter());
     
 }
-
+-(void)dealloc
+{
+    [super dealloc];
+}
 @end

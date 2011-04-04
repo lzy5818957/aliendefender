@@ -11,8 +11,10 @@
 
 
 @interface Resource : NSObject {
-	CCTexture2D *physicalBulletTexture;
+
 }
 +(CGPoint)AcceValue;
 +(void)SetAcceValue:(CGPoint)acceValue;
++(NSMutableDictionary*)TextureDictionary;
+-(void)releaseTexture;
 @end

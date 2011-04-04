@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "Box2D.h"
 #import "GameConfig.h"
-
+#import "Resource.h"
 
 @interface GameObject : NSObject {
 

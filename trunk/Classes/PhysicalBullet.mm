@@ -17,7 +17,7 @@
     
     self = [super init];
     attack = 50;
-	texture = [[CCTexture2D alloc] initWithString:@"PhysicalBullet" fontName:@"Arial" fontSize:12.0f];
+	texture = [[Resource TextureDictionary] valueForKey:@"PhysicalBullet"];
     sprite = [[CCSprite spriteWithTexture:texture] retain];
 	sprite.position = p;
 	bodyDef.type = b2_dynamicBody;
@@ -54,5 +54,9 @@
     CGPoint p = CGPointMake(direction.x*charge, direction.y*charge);
     body->ApplyLinearImpulse(b2Vec2(p.x,p.y),body->GetWorldCenter());
 
+}
+-(void)dealloc
+{
+    [super dealloc];
 }
 @end
