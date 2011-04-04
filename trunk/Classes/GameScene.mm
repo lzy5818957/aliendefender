@@ -55,6 +55,10 @@
 		[gameWorld setGameObjectReadyQueue: wavesOfGameObjectArray];
 		
 		[self schedule: @selector(tick:)];
+        
+        CCSprite *bg = [CCSprite spriteWithFile: @"gamebg.jpg"];
+        bg.position = ccp(240,160);
+        [self addChild: bg z:-1];
 	}
 	return self;
 }

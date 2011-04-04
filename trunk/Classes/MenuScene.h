@@ -19,4 +19,5 @@
 
 - (void)onNewGame:(id)sender;
 - (void)onCredits:(id)sender;
+- (void)onHelp:(id)sender;
 @end
