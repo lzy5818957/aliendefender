@@ -12,6 +12,7 @@
 #import "LevelObject.h"
 #import "Resource.h"
 #import "BaseScene.h"
+#import "SceneManager.h"
 
 //Pixel to metres ratio. Box2D uses metres as the unit for measurement.
 //This ratio defines how many pixels correspond to 1 Box2D "metre"
@@ -38,7 +39,7 @@
 @property(nonatomic,readonly) CGPoint weaponDirection;
 // returns a Scene that contains the GameScene as the only child
 +(id) scene;
-
-
-
+-(void) back: (id) sender;
+-(void) pause: (id) sender;
+-(void) play: (id) sender;
 @end
