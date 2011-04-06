@@ -18,6 +18,7 @@
 #define ktagPauseBG 1
 #define ktagPlayBtn 2
 #define ktagPauseMenu 3
+#define ktagDirectionBtn 4
 #define ktagShootBtn 10
 +(id) scene
 {
@@ -78,6 +79,10 @@
 	menu.position = ccp(0, 0);
 	[self addChild: menu z:1 tag:ktagGameMenu];
     
+    CCSprite *directionBtn = [CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"DirectionBtn"]];
+    directionBtn.position = CGPointMake(410, 160);
+    directionBtn.opacity = 200.0f;
+    [self addChild: directionBtn z:1 tag:ktagDirectionBtn];
     return self;
 }
 
@@ -212,16 +217,22 @@
 
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
-        if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
+        if (location.x<=[CCDirector sharedDirector].winSize.width*3/4 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
             
             
         }
-        else if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
+        else if (location.x<=[CCDirector sharedDirector].winSize.width*3/4 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
 
         }
         else
         {
+            
             rTouchStartLocation = [touch locationInView:[touch view]];
+            CCSprite *directionBtn =(CCSprite*)[self getChildByTag:ktagDirectionBtn];
+            
+            directionBtn.opacity = 100;
+            
+            
         }
 
 
@@ -238,11 +249,11 @@
         CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
-        if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
+        if (location.x<=[CCDirector sharedDirector].winSize.width*3/4 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
 
             
         }
-        else if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
+        else if (location.x<=[CCDirector sharedDirector].winSize.width*3/4 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
 
         }
         else
@@ -273,11 +284,11 @@
         CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
-        if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
+        if (location.x<=[CCDirector sharedDirector].winSize.width*3/4 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
 
             
         }
-        else if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
+        else if (location.x<=[CCDirector sharedDirector].winSize.width*3/4 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
 
             if (gameWorld.player.currentWeaponType == [PhysicalBullet class]) {
                 gameWorld.player.currentWeaponType = [ControllableBullet class];
@@ -291,7 +302,10 @@
 
         else
         {
-
+            rTouchStartLocation = [touch locationInView:[touch view]];
+            CCSprite *directionBtn =(CCSprite*)[self getChildByTag:ktagDirectionBtn];
+            
+            directionBtn.opacity = 40.0f;
         }
 
 

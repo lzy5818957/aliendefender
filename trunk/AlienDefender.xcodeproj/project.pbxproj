@@ -27,6 +27,7 @@
 		4A99939C134C44FB006BBBDE /* ChargeBar3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99939B134C44FB006BBBDE /* ChargeBar3.png */; };
 		4A99939F134C4718006BBBDE /* shootBtn_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99939D134C4718006BBBDE /* shootBtn_over.png */; };
 		4A9993A0134C4718006BBBDE /* shootBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99939E134C4718006BBBDE /* shootBtn.png */; };
+		4A9993A8134C5972006BBBDE /* DirectionBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9993A7134C5972006BBBDE /* DirectionBtn.png */; };
 		4AA1F8B813491AA90042F8B7 /* BaseScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1F8B713491AA90042F8B7 /* BaseScene.mm */; };
 		4AA1F8C4134920AF0042F8B7 /* MenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1F8C3134920AE0042F8B7 /* MenuScene.mm */; };
 		4AA40692133AF12A00692288 /* Ground.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40691133AF12900692288 /* Ground.mm */; };
@@ -413,6 +414,7 @@
 		4A99939B134C44FB006BBBDE /* ChargeBar3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChargeBar3.png; sourceTree = "<group>"; };
 		4A99939D134C4718006BBBDE /* shootBtn_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shootBtn_over.png; sourceTree = "<group>"; };
 		4A99939E134C4718006BBBDE /* shootBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shootBtn.png; sourceTree = "<group>"; };
+		4A9993A7134C5972006BBBDE /* DirectionBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DirectionBtn.png; sourceTree = "<group>"; };
 		4AA1F8B613491AA90042F8B7 /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
 		4AA1F8B713491AA90042F8B7 /* BaseScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseScene.mm; sourceTree = "<group>"; };
 		4AA1F8C2134920AE0042F8B7 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
@@ -943,6 +945,7 @@
 		4A999394134C3E80006BBBDE /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				4A9993A7134C5972006BBBDE /* DirectionBtn.png */,
 				4A99939B134C44FB006BBBDE /* ChargeBar3.png */,
 				4A999399134C44F4006BBBDE /* ChargeBar1.png */,
 				4A999397134C428D006BBBDE /* ChargeBar2.png */,
@@ -1909,6 +1912,7 @@
 				4A99939C134C44FB006BBBDE /* ChargeBar3.png in Resources */,
 				4A99939F134C4718006BBBDE /* shootBtn_over.png in Resources */,
 				4A9993A0134C4718006BBBDE /* shootBtn.png in Resources */,
+				4A9993A8134C5972006BBBDE /* DirectionBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
