@@ -122,6 +122,7 @@
 {
 
     [self realizeGameObject:[player cannon]];
+    [self realizeGameObject:[player chargeBar]];
     [self realizeGameObject:[player playerLife]];
 
 }

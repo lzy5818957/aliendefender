@@ -14,10 +14,11 @@
 
 @synthesize gameWorld, level, weaponDirection;
 
-#define ktagPauseBtn 0
+#define ktagGameMenu 0
 #define ktagPauseBG 1
 #define ktagPlayBtn 2
 #define ktagPauseMenu 3
+#define ktagShootBtn 10
 +(id) scene
 {
 	// 'scene' is an autorelease object.
@@ -47,7 +48,7 @@
         //initWeaponDirection
         weaponDirection = CGPointMake(1, 0);
 		angle = 0.f;
-        chargeTimer = 1;
+        chargeTimer = 0;
         chargeStart = NO;
 		//init GameWorld
 		gameWorld = [[GameWorld alloc] init];
@@ -66,18 +67,24 @@
 	}
     
     CCMenuItemImage *pause = [CCMenuItemImage  itemFromNormalImage:@"pauseBtn.png" selectedImage:@"pauseBtn_over.png" target:self selector:@selector(pause:)];
-	CCMenu *menu = [CCMenu menuWithItems: pause, nil];
-	
-	menu.position = ccp(15, 305);
-	[self addChild: menu z:1 tag:ktagPauseBtn];
     
-	return self;
+    pause.position = ccp(15,305);
+    
+    CCMenuItem *shoot = [CCMenuItemImage itemFromNormalImage:@"shootBtn.png" selectedImage:@"shootBtn_over.png" target:self selector:@selector(shoot:)];
+    shoot.position = ccp(40,80);
+    shoot.tag = ktagShootBtn;
+    
+	CCMenu *menu = [CCMenu menuWithItems: pause, shoot,nil];
+	menu.position = ccp(0, 0);
+	[self addChild: menu z:1 tag:ktagGameMenu];
+    
+    return self;
 }
 
 -(void) pause: (id) sender{
     
 
-    [self removeChildByTag:ktagPauseBtn cleanup:YES];
+    [self removeChildByTag:ktagGameMenu cleanup:YES];
     
     CCSprite *pauseScreen = [CCSprite spriteWithFile: @"pausebg.png"];
     pauseScreen.position = ccp(240,160);
@@ -114,12 +121,24 @@
 	CCMenu *menu = [CCMenu menuWithItems: pause, nil];
 	
 	menu.position = ccp(15, 305);
-	[self addChild: menu z:1 tag:ktagPauseBtn];
+	[self addChild: menu z:1 tag:ktagGameMenu];
     [[CCDirector sharedDirector] resume];
 }
+
 -(void) back: (id) sender{
     [[CCDirector sharedDirector] resume];
 	[SceneManager goMenu];
+}
+
+- (void)shoot: (id) sender
+{
+    //fire weapon
+    PlayerWeaponObject *weapon = [gameWorld.player loadWeaponCharge:gameWorld.player.chargeBar.charge*4
+                                                          Direction:weaponDirection];
+    chargeTimer = 0;
+    chargeStart = NO;
+    [[gameWorld weaponArray] addObject:weapon];
+    
 }
 
 //delegate method
@@ -173,9 +192,16 @@
         chargeTimer += 0.05;
 
     }
-    gameWorld.player.playerLife.sprite.scaleX = chargeTimer;
+    CCMenu *gameMenu = (CCMenu*)[self getChildByTag:ktagGameMenu];
+    CCMenuItem *shootBtn = (CCMenuItem*)[gameMenu getChildByTag:ktagShootBtn];
     
-
+    if (shootBtn.isSelected == YES) {
+        chargeStart = YES;
+        
+    }
+    
+    gameWorld.player.chargeBar.charge = chargeTimer;
+    
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -187,7 +213,7 @@
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
         if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
-            chargeStart = YES;
+            
             
         }
         else if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
@@ -248,11 +274,7 @@
 		location = [[CCDirector sharedDirector] convertToGL: location];
         
         if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y<=[CCDirector sharedDirector].winSize.height*2/3) {
-            //fire weapon
-            PlayerWeaponObject *weapon = [gameWorld.player loadWeaponCharge:chargeTimer*4  Direction:weaponDirection];
-            chargeTimer = 1;
-            chargeStart = NO;
-            [[gameWorld weaponArray] addObject:weapon];
+
             
         }
         else if (location.x<=[CCDirector sharedDirector].winSize.width/2 && location.y>=[CCDirector sharedDirector].winSize.height*2/3) {
@@ -276,6 +298,7 @@
 	}
 
 }
+
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
 {	

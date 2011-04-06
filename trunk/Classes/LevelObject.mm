@@ -58,7 +58,7 @@
         {
             for (int i = 0; i < wave.numberOfEnemies ; i++) 
             {
-                GameObject *gameObject = [[[UFO alloc] initWithCoords:CGPointMake(screenSize.width, 300)] autorelease];
+                GameObject *gameObject = [[[UFO alloc] initWithCoords:CGPointMake(screenSize.width, 280)] autorelease];
                 [gameObjectArray addObject: gameObject];
                 gameObject.health = (gameObject.health)*(wave.difficulty);
                 

@@ -1,21 +1,19 @@
 //
-//  PlayerLife.h
+//  ChargeBar.h
 //  AlienDefender
 //
-//  Created by Zunyi Lin on 11-03-23.
+//  Created by Zunyi Lin on 11-04-05.
 //  Copyright 2011 University Of Saskatchewan. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "GameObject.h"
 
-
-@interface PlayerLife : GameObject {
+@interface ChargeBar : GameObject {
     
-    int life;
+    float charge;
 }
-
-@property (nonatomic,readwrite) int life;
+@property (nonatomic,readwrite) float charge;
 
 -(id)initWithCoords:(CGPoint)p;
 -(void)update;

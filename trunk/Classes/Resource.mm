@@ -51,6 +51,14 @@ static float accelY;
         //add AlienTexture
         CCTexture2D *alienTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Alien"]] autorelease];
         [textureDictionary setValue:alienTexture forKey:@"Alien"];
+        
+        //add AlienTexture
+        CCTexture2D *chargeBarTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"ChargeBar"]] autorelease];
+        [textureDictionary setValue:chargeBarTexture forKey:@"ChargeBar"];
+        
+        //add AlienTexture
+        CCTexture2D *lifeBarTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"ChargeBar3"]] autorelease];
+        [textureDictionary setValue:lifeBarTexture forKey:@"LifeBar"];
     }
     
     return textureDictionary;
