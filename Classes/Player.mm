@@ -30,14 +30,14 @@
     if(currentWeaponType == [PhysicalBullet class])
     {
 
-        weapon = [[PhysicalBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge+1 Direction:dir ];
+        weapon = [[PhysicalBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge Direction:dir ];
     
     }
     if(currentWeaponType == [ControllableBullet class])
     {
 
         
-        weapon = [[ControllableBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge Direction:dir ];
+        weapon = [[ControllableBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge+3 Direction:dir ];
         
     }
     return weapon;
