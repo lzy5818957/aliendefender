@@ -33,15 +33,15 @@ static float accelY;
         textureDictionary = [[NSMutableDictionary dictionaryWithCapacity:0] retain];
         
         //add CannonTexture
-        CCTexture2D *cannonTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Arrow"]] autorelease];
+        CCTexture2D *cannonTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"arrow"]] autorelease];
         [textureDictionary setValue:cannonTexture forKey:@"Cannon"];
         
         //add PhysicalBulletTexture
-        CCTexture2D *physicalBulletTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Bullet"]] autorelease];
+        CCTexture2D *physicalBulletTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"bullet"]] autorelease];
         [textureDictionary setValue:physicalBulletTexture forKey:@"PhysicalBullet"];
         
         //add ControllableBulletTexture
-        CCTexture2D *controllableBulletTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Bullet"]] autorelease];
+        CCTexture2D *controllableBulletTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"bullet"]] autorelease];
         [textureDictionary setValue:controllableBulletTexture forKey:@"ControllableBullet"];
         
         //add UFOTexture
