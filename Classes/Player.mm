@@ -11,7 +11,7 @@
 
 @implementation Player
 
-@synthesize currentWeaponType, cannon, playerLife;
+@synthesize currentWeaponType, cannon, playerLife, chargeBar;
 
 -(id)init
 {
@@ -20,7 +20,8 @@
     currentWeaponType = [ControllableBullet class];
     //place the cannon in the middle of screen
     cannon = [[CannonObject alloc] initWithCoords:CGPointMake(20, [CCDirector sharedDirector].winSize.height/2)];
-    playerLife = [[PlayerLife alloc] initWithCoords:CGPointMake(40, 300)];
+    playerLife = [[PlayerLife alloc] initWithCoords:CGPointMake(90, 305)];
+    chargeBar = [[ChargeBar alloc] initWithCoords:CGPointMake(400, 305)];
     return self;
 }
 -(PlayerWeaponObject*)loadWeaponCharge:(double) charge Direction:(CGPoint)dir
@@ -29,8 +30,7 @@
     if(currentWeaponType == [PhysicalBullet class])
     {
 
-
-        weapon = [[PhysicalBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge Direction:dir ];
+        weapon = [[PhysicalBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge+1 Direction:dir ];
     
     }
     if(currentWeaponType == [ControllableBullet class])

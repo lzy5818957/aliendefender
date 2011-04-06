@@ -20,6 +20,13 @@
 		4A1024B813492B7400F31366 /* CreditsScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A1024B713492B7300F31366 /* CreditsScene.mm */; };
 		4A50FB9E132F295100C8BBC3 /* EnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A50FB9D132F295100C8BBC3 /* EnemyObject.mm */; };
 		4A6C3D89132F4E5500C39500 /* ufo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C3D88132F4E5500C39500 /* ufo.png */; };
+		4A999393134C2D61006BBBDE /* ChargeBar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A999392134C2D61006BBBDE /* ChargeBar.mm */; };
+		4A999396134C3E9A006BBBDE /* ChargeBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A999395134C3E9A006BBBDE /* ChargeBar.png */; };
+		4A999398134C428D006BBBDE /* ChargeBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A999397134C428D006BBBDE /* ChargeBar2.png */; };
+		4A99939A134C44F4006BBBDE /* ChargeBar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A999399134C44F4006BBBDE /* ChargeBar1.png */; };
+		4A99939C134C44FB006BBBDE /* ChargeBar3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99939B134C44FB006BBBDE /* ChargeBar3.png */; };
+		4A99939F134C4718006BBBDE /* shootBtn_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99939D134C4718006BBBDE /* shootBtn_over.png */; };
+		4A9993A0134C4718006BBBDE /* shootBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99939E134C4718006BBBDE /* shootBtn.png */; };
 		4AA1F8B813491AA90042F8B7 /* BaseScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1F8B713491AA90042F8B7 /* BaseScene.mm */; };
 		4AA1F8C4134920AF0042F8B7 /* MenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1F8C3134920AE0042F8B7 /* MenuScene.mm */; };
 		4AA40692133AF12A00692288 /* Ground.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40691133AF12900692288 /* Ground.mm */; };
@@ -398,6 +405,14 @@
 		4A50FB9C132F295100C8BBC3 /* EnemyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyObject.h; sourceTree = "<group>"; };
 		4A50FB9D132F295100C8BBC3 /* EnemyObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EnemyObject.mm; sourceTree = "<group>"; };
 		4A6C3D88132F4E5500C39500 /* ufo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo.png; sourceTree = "<group>"; };
+		4A999391134C2D61006BBBDE /* ChargeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeBar.h; sourceTree = "<group>"; };
+		4A999392134C2D61006BBBDE /* ChargeBar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChargeBar.mm; sourceTree = "<group>"; };
+		4A999395134C3E9A006BBBDE /* ChargeBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChargeBar.png; sourceTree = "<group>"; };
+		4A999397134C428D006BBBDE /* ChargeBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChargeBar2.png; sourceTree = "<group>"; };
+		4A999399134C44F4006BBBDE /* ChargeBar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChargeBar1.png; sourceTree = "<group>"; };
+		4A99939B134C44FB006BBBDE /* ChargeBar3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChargeBar3.png; sourceTree = "<group>"; };
+		4A99939D134C4718006BBBDE /* shootBtn_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shootBtn_over.png; sourceTree = "<group>"; };
+		4A99939E134C4718006BBBDE /* shootBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shootBtn.png; sourceTree = "<group>"; };
 		4AA1F8B613491AA90042F8B7 /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
 		4AA1F8B713491AA90042F8B7 /* BaseScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseScene.mm; sourceTree = "<group>"; };
 		4AA1F8C2134920AE0042F8B7 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
@@ -888,6 +903,8 @@
 		4A1024AA13492A0700F31366 /* ButtonResource */ = {
 			isa = PBXGroup;
 			children = (
+				4A99939D134C4718006BBBDE /* shootBtn_over.png */,
+				4A99939E134C4718006BBBDE /* shootBtn.png */,
 				4AC87D54134997290091CA04 /* playBtn_over.png */,
 				4AC87D55134997290091CA04 /* playBtn.png */,
 				4AC87D4E134990630091CA04 /* pauseBtn_over.png */,
@@ -915,11 +932,23 @@
 		4A6C3D86132F4E4900C39500 /* SpriteResource */ = {
 			isa = PBXGroup;
 			children = (
+				4A999394134C3E80006BBBDE /* Player */,
 				4AC87D28134958060091CA04 /* Enemy */,
 				4AC87D27134957F80091CA04 /* Bullet */,
 				4AE24A151339C3C3005B926C /* arrow.png */,
 			);
 			name = SpriteResource;
+			sourceTree = "<group>";
+		};
+		4A999394134C3E80006BBBDE /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				4A99939B134C44FB006BBBDE /* ChargeBar3.png */,
+				4A999399134C44F4006BBBDE /* ChargeBar1.png */,
+				4A999397134C428D006BBBDE /* ChargeBar2.png */,
+				4A999395134C3E9A006BBBDE /* ChargeBar.png */,
+			);
+			name = Player;
 			sourceTree = "<group>";
 		};
 		4AA1F8B5134919D50042F8B7 /* Main */ = {
@@ -1093,6 +1122,8 @@
 				4ACDB30F132F23380082F084 /* Player.mm */,
 				4AA40696133AFE0300692288 /* PlayerLife.h */,
 				4AA40697133AFE0300692288 /* PlayerLife.mm */,
+				4A999391134C2D61006BBBDE /* ChargeBar.h */,
+				4A999392134C2D61006BBBDE /* ChargeBar.mm */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -1872,6 +1903,12 @@
 				4AC87D53134994DB0091CA04 /* pausebg.png in Resources */,
 				4AC87D56134997290091CA04 /* playBtn_over.png in Resources */,
 				4AC87D57134997290091CA04 /* playBtn.png in Resources */,
+				4A999396134C3E9A006BBBDE /* ChargeBar.png in Resources */,
+				4A999398134C428D006BBBDE /* ChargeBar2.png in Resources */,
+				4A99939A134C44F4006BBBDE /* ChargeBar1.png in Resources */,
+				4A99939C134C44FB006BBBDE /* ChargeBar3.png in Resources */,
+				4A99939F134C4718006BBBDE /* shootBtn_over.png in Resources */,
+				4A9993A0134C4718006BBBDE /* shootBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1913,6 +1950,7 @@
 				4A1024A9134926C700F31366 /* SceneManager.mm in Sources */,
 				4A1024B813492B7400F31366 /* CreditsScene.mm in Sources */,
 				4AC87D43134981DD0091CA04 /* HelpScene.mm in Sources */,
+				4A999393134C2D61006BBBDE /* ChargeBar.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
