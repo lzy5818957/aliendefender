@@ -1,8 +1,11 @@
 //
 // Prefix header for all source files of the 'AlienDefender' target in the 'AlienDefender' project
 //
+#import <Availability.h>
 
 #ifdef __OBJC__
 	#import <Foundation/Foundation.h>
 	#import <UIKit/UIKit.h>
+    #import <CoreData/CoreData.h>
+    #import "CommonIncludes.h"
 #endif

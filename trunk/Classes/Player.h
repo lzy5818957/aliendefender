@@ -15,12 +15,14 @@
 #import "PlayerLife.h"
 #import "Exit.h"
 #import "ChargeBar.h"
+#import "CoolDownBar.h"
 
 @interface Player : NSObject <ExitDelegate> {
     Class currentWeaponType;
     CannonObject *cannon;
     PlayerLife *playerLife;
     ChargeBar *chargeBar;
+    CoolDownBar *coolDownBar;
     
 }
 
@@ -28,6 +30,7 @@
 @property (nonatomic,retain) CannonObject *cannon;
 @property (nonatomic,retain) PlayerLife *playerLife;
 @property (nonatomic,retain) ChargeBar *chargeBar;
+@property (nonatomic,retain) CoolDownBar *coolDownBar;
 
 -(PlayerWeaponObject*)loadWeaponCharge:(double) charge Direction:(CGPoint)dir;
 @end

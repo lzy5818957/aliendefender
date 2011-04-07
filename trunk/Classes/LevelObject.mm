@@ -27,12 +27,12 @@
         //will give definition of level later
         WaveObject *wave1 = [WaveObject waveWithnumberOfEnemy:10 Difficulty:1.2 Type:[Alien class]];
         WaveObject *wave2 = [WaveObject waveWithnumberOfEnemy:10 Difficulty:0.3 Type:[UFO class]];
-
+        WaveObject *wave3 = [WaveObject waveWithnumberOfEnemy:10 Difficulty:0.3 Type:[SilverCoin class]];
         [waves addObject:wave1];
         [waves addObject:wave2];
+        [waves addObject:wave3];
     }
-
-	
+    
 	return self;
 }
 
@@ -65,7 +65,19 @@
             }
             
         }
+        else if(wave.enemyType == [SilverCoin class])
+        {
+            for (int i = 0; i < wave.numberOfEnemies ; i++) 
+            {
+                int x = arc4random() % 340 + 60;
+                int y = arc4random() % 180 + 30;
+                GameObject *gameObject = [[[SilverCoin alloc] initWithCoords:CGPointMake(x, y)] autorelease];
+                [gameObjectArray addObject: gameObject];
+                gameObject.health = (gameObject.health)*(wave.difficulty);
+                
+            }
             
+        }
 		
 		[wavesArray addObject:gameObjectArray];
 	}

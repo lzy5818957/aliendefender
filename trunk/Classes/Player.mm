@@ -11,7 +11,7 @@
 
 @implementation Player
 
-@synthesize currentWeaponType, cannon, playerLife, chargeBar;
+@synthesize currentWeaponType, cannon, playerLife, chargeBar, coolDownBar;
 
 -(id)init
 {
@@ -19,9 +19,11 @@
     //setDefaultWeapon
     currentWeaponType = [ControllableBullet class];
     //place the cannon in the middle of screen
+    //Remember Initiallize these in gameworld
     cannon = [[CannonObject alloc] initWithCoords:CGPointMake(20, [CCDirector sharedDirector].winSize.height/2)];
     playerLife = [[PlayerLife alloc] initWithCoords:CGPointMake(90, 305)];
     chargeBar = [[ChargeBar alloc] initWithCoords:CGPointMake(400, 305)];
+    coolDownBar = [[CoolDownBar alloc] initWithCoords:CGPointMake(40, 80)];
     return self;
 }
 -(PlayerWeaponObject*)loadWeaponCharge:(double) charge Direction:(CGPoint)dir
@@ -37,7 +39,7 @@
     {
 
         
-        weapon = [[ControllableBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge+3 Direction:dir ];
+        weapon = [[ControllableBullet alloc] initWithCoords:CGPointMake(20, cannon.sprite.position.y) Charge:charge+1 Direction:dir ];
         
     }
     return weapon;
