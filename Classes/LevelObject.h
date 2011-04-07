@@ -11,6 +11,7 @@
 #import "GameObject.h"
 #import "Alien.h"
 #import "UFO.h"
+#import "SilverCoin.h"
 
 @interface LevelObject : NSObject {
 

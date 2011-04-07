@@ -20,6 +20,11 @@
 		4A1024B813492B7400F31366 /* CreditsScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A1024B713492B7300F31366 /* CreditsScene.mm */; };
 		4A50FB9E132F295100C8BBC3 /* EnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A50FB9D132F295100C8BBC3 /* EnemyObject.mm */; };
 		4A6C3D89132F4E5500C39500 /* ufo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C3D88132F4E5500C39500 /* ufo.png */; };
+		4A762CC7134D9C940039CD77 /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A762CC5134D9C940039CD77 /* UserData.xcdatamodeld */; };
+		4A762CDE134DAB580039CD77 /* FileUtilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A762CDA134DAB580039CD77 /* FileUtilities.mm */; };
+		4A762CDF134DAB580039CD77 /* CoreDataHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A762CDC134DAB580039CD77 /* CoreDataHelper.mm */; };
+		4A762CE3134DAC990039CD77 /* PlayerData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A762CE2134DAC990039CD77 /* PlayerData.mm */; };
+		4A762CE5134DB08F0039CD77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A762CE4134DB08E0039CD77 /* CoreData.framework */; };
 		4A999393134C2D61006BBBDE /* ChargeBar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A999392134C2D61006BBBDE /* ChargeBar.mm */; };
 		4A999396134C3E9A006BBBDE /* ChargeBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A999395134C3E9A006BBBDE /* ChargeBar.png */; };
 		4A999398134C428D006BBBDE /* ChargeBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A999397134C428D006BBBDE /* ChargeBar2.png */; };
@@ -34,6 +39,12 @@
 		4AA40695133AF21200692288 /* Exit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40694133AF20F00692288 /* Exit.mm */; };
 		4AA40698133AFE0400692288 /* PlayerLife.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40697133AFE0300692288 /* PlayerLife.mm */; };
 		4AA4069B133B185E00692288 /* UFO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4069A133B185C00692288 /* UFO.mm */; };
+		4AC0EE7B134D84C3004AC975 /* CoolDownBar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */; };
+		4AC0EE7D134D866F004AC975 /* CoolDownBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0EE7C134D866F004AC975 /* CoolDownBar.png */; };
+		4AC0EE81134D9125004AC975 /* StaticEnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE80134D9125004AC975 /* StaticEnemyObject.mm */; };
+		4AC0EE84134D91B5004AC975 /* Coin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE83134D91B5004AC975 /* Coin.mm */; };
+		4AC0EE88134D931A004AC975 /* SilverCoin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE87134D931A004AC975 /* SilverCoin.mm */; };
+		4AC0EE8B134D95D2004AC975 /* SilverCoin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0EE8A134D95D2004AC975 /* SilverCoin.png */; };
 		4AC87D30134972740091CA04 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC87D2F134972740091CA04 /* bullet.png */; };
 		4AC87D32134975C70091CA04 /* Alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC87D31134975C70091CA04 /* Alien.png */; };
 		4AC87D34134978F80091CA04 /* gamebg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4AC87D33134978F80091CA04 /* gamebg.jpg */; };
@@ -406,6 +417,15 @@
 		4A50FB9C132F295100C8BBC3 /* EnemyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyObject.h; sourceTree = "<group>"; };
 		4A50FB9D132F295100C8BBC3 /* EnemyObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EnemyObject.mm; sourceTree = "<group>"; };
 		4A6C3D88132F4E5500C39500 /* ufo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo.png; sourceTree = "<group>"; };
+		4A762CC6134D9C940039CD77 /* UserData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserData.xcdatamodel; sourceTree = "<group>"; };
+		4A762CD9134DAB580039CD77 /* FileUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtilities.h; sourceTree = "<group>"; };
+		4A762CDA134DAB580039CD77 /* FileUtilities.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FileUtilities.mm; sourceTree = "<group>"; };
+		4A762CDB134DAB580039CD77 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		4A762CDC134DAB580039CD77 /* CoreDataHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoreDataHelper.mm; sourceTree = "<group>"; };
+		4A762CDD134DAB580039CD77 /* CommonIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonIncludes.h; sourceTree = "<group>"; };
+		4A762CE1134DAC990039CD77 /* PlayerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerData.h; sourceTree = "<group>"; };
+		4A762CE2134DAC990039CD77 /* PlayerData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerData.mm; sourceTree = "<group>"; };
+		4A762CE4134DB08E0039CD77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4A999391134C2D61006BBBDE /* ChargeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeBar.h; sourceTree = "<group>"; };
 		4A999392134C2D61006BBBDE /* ChargeBar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChargeBar.mm; sourceTree = "<group>"; };
 		4A999395134C3E9A006BBBDE /* ChargeBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChargeBar.png; sourceTree = "<group>"; };
@@ -427,6 +447,16 @@
 		4AA40697133AFE0300692288 /* PlayerLife.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerLife.mm; sourceTree = "<group>"; };
 		4AA40699133B185B00692288 /* UFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFO.h; sourceTree = "<group>"; };
 		4AA4069A133B185C00692288 /* UFO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UFO.mm; sourceTree = "<group>"; };
+		4AC0EE79134D84C3004AC975 /* CoolDownBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolDownBar.h; sourceTree = "<group>"; };
+		4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoolDownBar.mm; sourceTree = "<group>"; };
+		4AC0EE7C134D866F004AC975 /* CoolDownBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoolDownBar.png; sourceTree = "<group>"; };
+		4AC0EE7F134D9125004AC975 /* StaticEnemyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticEnemyObject.h; sourceTree = "<group>"; };
+		4AC0EE80134D9125004AC975 /* StaticEnemyObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StaticEnemyObject.mm; sourceTree = "<group>"; };
+		4AC0EE82134D91B5004AC975 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
+		4AC0EE83134D91B5004AC975 /* Coin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Coin.mm; sourceTree = "<group>"; };
+		4AC0EE86134D9319004AC975 /* SilverCoin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SilverCoin.h; sourceTree = "<group>"; };
+		4AC0EE87134D931A004AC975 /* SilverCoin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SilverCoin.mm; sourceTree = "<group>"; };
+		4AC0EE8A134D95D2004AC975 /* SilverCoin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverCoin.png; sourceTree = "<group>"; };
 		4AC87D2F134972740091CA04 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		4AC87D31134975C70091CA04 /* Alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alien.png; sourceTree = "<group>"; };
 		4AC87D33134978F80091CA04 /* gamebg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gamebg.jpg; sourceTree = "<group>"; };
@@ -784,6 +814,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A762CE5134DB08F0039CD77 /* CoreData.framework in Frameworks */,
 				DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */,
 				DCCBF1B90F6022AE0040855A /* Foundation.framework in Frameworks */,
 				DCCBF1BB0F6022AE0040855A /* OpenGLES.framework in Frameworks */,
@@ -848,6 +879,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4A762CE4134DB08E0039CD77 /* CoreData.framework */,
 				504DFC7310AF1758006D82FE /* LICENSE.cocos2d */,
 				504DFC7410AF1758006D82FE /* LICENSE.cocosdenshion */,
 				E0C5506C11FA3ABC00B9E4CB /* LICENSE.box2d */,
@@ -942,9 +974,40 @@
 			name = SpriteResource;
 			sourceTree = "<group>";
 		};
+		4A762CC4134D9C7C0039CD77 /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				4A762CC5134D9C940039CD77 /* UserData.xcdatamodeld */,
+			);
+			name = UserData;
+			sourceTree = "<group>";
+		};
+		4A762CD8134DAB3D0039CD77 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4A762CE0134DAC670039CD77 /* Entity */,
+				4A762CD9134DAB580039CD77 /* FileUtilities.h */,
+				4A762CDA134DAB580039CD77 /* FileUtilities.mm */,
+				4A762CDB134DAB580039CD77 /* CoreDataHelper.h */,
+				4A762CDC134DAB580039CD77 /* CoreDataHelper.mm */,
+				4A762CDD134DAB580039CD77 /* CommonIncludes.h */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		4A762CE0134DAC670039CD77 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4A762CE1134DAC990039CD77 /* PlayerData.h */,
+				4A762CE2134DAC990039CD77 /* PlayerData.mm */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
 		4A999394134C3E80006BBBDE /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				4AC0EE7C134D866F004AC975 /* CoolDownBar.png */,
 				4A9993A7134C5972006BBBDE /* DirectionBtn.png */,
 				4A99939B134C44FB006BBBDE /* ChargeBar3.png */,
 				4A999399134C44F4006BBBDE /* ChargeBar1.png */,
@@ -966,6 +1029,7 @@
 		4AA6544A1331E51100F9A39E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4A762CD8134DAB3D0039CD77 /* CoreData */,
 				4AC9C512133C437F00FB8C51 /* Resource.h */,
 				4AC9C513133C437F00FB8C51 /* Resource.mm */,
 			);
@@ -1053,6 +1117,35 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		4AC0EE7E134D90DB004AC975 /* StaticEnemyObject */ = {
+			isa = PBXGroup;
+			children = (
+				4AC0EE85134D92E6004AC975 /* Coin */,
+				4AC0EE7F134D9125004AC975 /* StaticEnemyObject.h */,
+				4AC0EE80134D9125004AC975 /* StaticEnemyObject.mm */,
+			);
+			name = StaticEnemyObject;
+			sourceTree = "<group>";
+		};
+		4AC0EE85134D92E6004AC975 /* Coin */ = {
+			isa = PBXGroup;
+			children = (
+				4AC0EE82134D91B5004AC975 /* Coin.h */,
+				4AC0EE83134D91B5004AC975 /* Coin.mm */,
+				4AC0EE86134D9319004AC975 /* SilverCoin.h */,
+				4AC0EE87134D931A004AC975 /* SilverCoin.mm */,
+			);
+			name = Coin;
+			sourceTree = "<group>";
+		};
+		4AC0EE89134D95B7004AC975 /* Coin */ = {
+			isa = PBXGroup;
+			children = (
+				4AC0EE8A134D95D2004AC975 /* SilverCoin.png */,
+			);
+			name = Coin;
+			sourceTree = "<group>";
+		};
 		4AC87D27134957F80091CA04 /* Bullet */ = {
 			isa = PBXGroup;
 			children = (
@@ -1064,6 +1157,7 @@
 		4AC87D28134958060091CA04 /* Enemy */ = {
 			isa = PBXGroup;
 			children = (
+				4AC0EE89134D95B7004AC975 /* Coin */,
 				4AC87D31134975C70091CA04 /* Alien.png */,
 				4A6C3D88132F4E5500C39500 /* ufo.png */,
 			);
@@ -1127,6 +1221,8 @@
 				4AA40697133AFE0300692288 /* PlayerLife.mm */,
 				4A999391134C2D61006BBBDE /* ChargeBar.h */,
 				4A999392134C2D61006BBBDE /* ChargeBar.mm */,
+				4AC0EE79134D84C3004AC975 /* CoolDownBar.h */,
+				4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -1145,6 +1241,7 @@
 		4ACDB320132F26C80082F084 /* EnemyObject */ = {
 			isa = PBXGroup;
 			children = (
+				4AC0EE7E134D90DB004AC975 /* StaticEnemyObject */,
 				4ACDB325132F27170082F084 /* GroundEnemyObject */,
 				4ACDB324132F27010082F084 /* FlyingEnemyObject */,
 				4A50FB9C132F295100C8BBC3 /* EnemyObject.h */,
@@ -1429,6 +1526,7 @@
 		50F4144210692EE7002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A762CC4134D9C7C0039CD77 /* UserData */,
 				4A1024B313492A6A00F31366 /* Backgrounds */,
 				4A1024AA13492A0700F31366 /* ButtonResource */,
 				4A6C3D86132F4E4900C39500 /* SpriteResource */,
@@ -1913,6 +2011,8 @@
 				4A99939F134C4718006BBBDE /* shootBtn_over.png in Resources */,
 				4A9993A0134C4718006BBBDE /* shootBtn.png in Resources */,
 				4A9993A8134C5972006BBBDE /* DirectionBtn.png in Resources */,
+				4AC0EE7D134D866F004AC975 /* CoolDownBar.png in Resources */,
+				4AC0EE8B134D95D2004AC975 /* SilverCoin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1955,6 +2055,14 @@
 				4A1024B813492B7400F31366 /* CreditsScene.mm in Sources */,
 				4AC87D43134981DD0091CA04 /* HelpScene.mm in Sources */,
 				4A999393134C2D61006BBBDE /* ChargeBar.mm in Sources */,
+				4AC0EE7B134D84C3004AC975 /* CoolDownBar.mm in Sources */,
+				4AC0EE81134D9125004AC975 /* StaticEnemyObject.mm in Sources */,
+				4AC0EE84134D91B5004AC975 /* Coin.mm in Sources */,
+				4AC0EE88134D931A004AC975 /* SilverCoin.mm in Sources */,
+				4A762CC7134D9C940039CD77 /* UserData.xcdatamodeld in Sources */,
+				4A762CDE134DAB580039CD77 /* FileUtilities.mm in Sources */,
+				4A762CDF134DAB580039CD77 /* CoreDataHelper.mm in Sources */,
+				4A762CE3134DAC990039CD77 /* PlayerData.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2264,6 +2372,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4A762CC5134D9C940039CD77 /* UserData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A762CC6134D9C940039CD77 /* UserData.xcdatamodel */,
+			);
+			currentVersion = 4A762CC6134D9C940039CD77 /* UserData.xcdatamodel */;
+			path = UserData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

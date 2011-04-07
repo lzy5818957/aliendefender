@@ -52,6 +52,10 @@ static float accelY;
         CCTexture2D *alienTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"Alien"]] autorelease];
         [textureDictionary setValue:alienTexture forKey:@"Alien"];
         
+        //add SilverCoin
+        CCTexture2D *silverCoin = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"SilverCoin"]] autorelease];
+        [textureDictionary setValue:silverCoin forKey:@"SilverCoin"];
+        
         //add ChargeBar
         CCTexture2D *chargeBarTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"ChargeBar"]] autorelease];
         [textureDictionary setValue:chargeBarTexture forKey:@"ChargeBar"];
@@ -59,6 +63,10 @@ static float accelY;
         //add LifeBar
         CCTexture2D *lifeBarTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"ChargeBar3"]] autorelease];
         [textureDictionary setValue:lifeBarTexture forKey:@"LifeBar"];
+        
+        //add CoolDownBar
+        CCTexture2D *coolDownBarTexture = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"CoolDownBar"]] autorelease];
+        [textureDictionary setValue:coolDownBarTexture forKey:@"CoolDownBar"];
         
         //add directionBtn
         CCTexture2D *directionBtn = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"DirectionBtn"]] autorelease];
@@ -68,9 +76,35 @@ static float accelY;
     return textureDictionary;
 }
 
++(PlayerData*)PlayerData
+{
+    static PlayerData* playerData;
+    
+    NSArray* arrayOfPlayer = [ [ CoreDataHelper sharedCoreDataHelper ] getAllObjectsOfType: @"PlayerData" predicateString: nil ];
+    
+    if ([arrayOfPlayer count] == 0) {
+        
+        playerData = ( PlayerData* )[ [ CoreDataHelper sharedCoreDataHelper ] createObjectOfType: @"PlayerData" ];
+        playerData.currentLevel = [ NSNumber numberWithInt: 1 ];
+        [ [ CoreDataHelper sharedCoreDataHelper ] save ];
+    }
+    else
+    {
+        for ( PlayerData* currentPlayer in arrayOfPlayer )
+        {
+            playerData = currentPlayer;
+            NSLog(@"hERE11111");
+        }
+        
+    }
+    return playerData;
+}
+
 +(CGPoint)AcceValue
 {
     return CGPointMake(accelX, accelY);
+    
+
 }
 
 +(void)SetAcceValue:(CGPoint)acceValue
