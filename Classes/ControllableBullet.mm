@@ -44,7 +44,7 @@
     CGPoint controlForce = [Resource AcceValue];
     body->ApplyForce(b2Vec2(0,body->GetMass()*10.1),body->GetWorldCenter());
     
-    if (body->GetLinearVelocity().x <= 3)  {
+    if (body->GetLinearVelocity().x <= 10)  {
         body->ApplyForce(b2Vec2(0,controlForce.x*3),body->GetWorldCenter());
 
     }else
