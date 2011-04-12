@@ -10,7 +10,6 @@
 
 #import "SceneManager.h"
 #import "GameScene.h"
-#import "CreditsScene.h"
 
 #import "BaseScene.h"
 
@@ -18,6 +17,6 @@
 }
 
 - (void)onNewGame:(id)sender;
-- (void)onCredits:(id)sender;
+- (void)onLevel:(id)sender;
 - (void)onHelp:(id)sender;
 @end

@@ -12,5 +12,6 @@
 @implementation PlayerData
 
 @dynamic currentLevel;
+@dynamic currentAvalibaleLevel;
 
 @end

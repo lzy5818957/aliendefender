@@ -77,15 +77,20 @@ Class nextTransition()
 	[SceneManager go: layer];
 }
 
-+(void) goCredits{
-	CCLayer *layer = [CreditsScene node];
++(void) goLevel{
+	CCLayer *layer = [LevelScene node];
 	[SceneManager go: layer];
 }
 +(void) goHelp{
 	CCLayer *layer = [HelpScene node];
 	[SceneManager go: layer];
 }
-
++(void) goNextLevel{
+    
+    CCLayer *layer = [NextLevelScene node];
+	[SceneManager go: layer];
+    
+}
 +(void) go: (CCLayer *) layer{
 	CCDirector *director = [CCDirector sharedDirector];
 	CCScene *newScene = [SceneManager wrap:layer];

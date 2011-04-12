@@ -86,6 +86,7 @@ static float accelY;
         
         playerData = ( PlayerData* )[ [ CoreDataHelper sharedCoreDataHelper ] createObjectOfType: @"PlayerData" ];
         playerData.currentLevel = [ NSNumber numberWithInt: 1 ];
+        playerData.currentAvalibaleLevel = [ NSNumber numberWithInt: 1 ];
         [ [ CoreDataHelper sharedCoreDataHelper ] save ];
     }
     else
@@ -93,12 +94,12 @@ static float accelY;
         for ( PlayerData* currentPlayer in arrayOfPlayer )
         {
             playerData = currentPlayer;
-            NSLog(@"hERE11111");
         }
         
     }
     return playerData;
 }
+
 
 +(CGPoint)AcceValue
 {

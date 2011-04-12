@@ -10,9 +10,11 @@
 
 #import "SceneManager.h"
 #import "BaseScene.h"
+#import "PlayerData.h"
 
-@interface CreditsScene : BaseScene {
+@interface LevelScene : BaseScene {
 	
 }
+-(void) onLevelNumber: (id) sender;
 -(void) back: (id) sender;
 @end

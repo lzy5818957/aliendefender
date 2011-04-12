@@ -18,6 +18,7 @@
 #import "Ground.h"
 #import "Exit.h"
 
+
 @protocol GameWorldDelegate 
 
 @required
@@ -35,11 +36,12 @@
 	NSMutableArray *gameObjectReadyQueue;
     NSMutableArray *weaponArray;
 	NSMutableArray *currentOnSceneArray;
-	NSMutableArray *toBeRemovedArray;\
+	NSMutableArray *toBeRemovedArray;
     ScreenBoundryObject *boundry;
     ScreenBoundryObject *exit;
     Player *player;
     ccTime accumlator;
+    BOOL levelInTransition;
     
 
 }
@@ -47,6 +49,7 @@
 @property (nonatomic,readwrite) b2World* world;
 @property (nonatomic,readwrite) GLESDebugDraw *m_debugDraw;
 @property (nonatomic,readonly) MyContactListener *_contactListener;
+@property (nonatomic,readonly) BOOL levelInTransition;
 @property (nonatomic, retain) id <GameWorldDelegate> delegate;
 @property (nonatomic, retain) NSMutableArray *gameObjectReadyQueue;
 @property (nonatomic, retain) NSMutableArray *weaponArray;
@@ -70,5 +73,7 @@
 -(void)emitWeapon;
 -(void)setUpPlayerWeapon;
 -(void)cleanUpDeadGameObject;
+
+-(void)levelPassed;
 
 @end

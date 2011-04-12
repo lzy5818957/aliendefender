@@ -49,7 +49,8 @@
 
     }else
     {
-        body->ApplyForce(b2Vec2((body->GetLinearVelocity().y),-(body->GetLinearVelocity().x)),body->GetWorldCenter());
+        //limite bullet speed by giving a negative force accoding to it's volicity
+        body->ApplyForce(b2Vec2(-(body->GetLinearVelocity().x),-(body->GetLinearVelocity().y)),body->GetWorldCenter());
     }
     
 }

@@ -18,7 +18,7 @@
     //Main menu
 	CCMenuItemImage *startNew = [CCMenuItemImage itemFromNormalImage:@"newGameBtn.png" selectedImage:@"newGameBtn_over.png" target:self selector:@selector(onNewGame:)];
 
-	CCMenuItemImage *credits = [CCMenuItemImage itemFromNormalImage:@"levelBtn.png" selectedImage:@"levelBtn_over.png" target:self selector:@selector(onCredits:)];
+	CCMenuItemImage *credits = [CCMenuItemImage itemFromNormalImage:@"levelBtn.png" selectedImage:@"levelBtn_over.png" target:self selector:@selector(onLevel:)];
         
 	CCMenu *menu = [CCMenu menuWithItems:startNew, credits, nil];
 	
@@ -76,8 +76,8 @@
 	[SceneManager goPlay];
 }
 
-- (void)onCredits:(id)sender{
-	[SceneManager goCredits];
+- (void)onLevel:(id)sender{
+	[SceneManager goLevel];
 }
 - (void)onHelp:(id)sender{
 	[SceneManager goHelp];

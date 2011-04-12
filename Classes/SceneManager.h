@@ -10,13 +10,16 @@
 
 #import "MenuScene.h"
 #import "GameScene.h"
-#import "CreditsScene.h"
+#import "LevelScene.h"
 #import "HelpScene.h"
+#import "NextLevelScene.h"
+
 @interface SceneManager : NSObject {
 }
 
 +(void) goMenu;
 +(void) goPlay;
-+(void) goCredits;
++(void) goLevel;
 +(void) goHelp;
++(void) goNextLevel;
 @end
