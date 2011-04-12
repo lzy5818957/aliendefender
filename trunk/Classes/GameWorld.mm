@@ -7,12 +7,12 @@
 //
 
 #import "GameWorld.h"
-
+#import "SceneManager.h"
 
 @implementation GameWorld
 
 @synthesize world, m_debugDraw, delegate, gameObjectReadyQueue, weaponArray, player, _contactListener,
-            toBeRemovedArray,currentOnSceneArray, boundry, exit;
+            toBeRemovedArray,currentOnSceneArray, boundry, exit, levelInTransition;
 -(GameWorld *)init
 {
 	[super init];
@@ -24,6 +24,7 @@
 	toBeRemovedArray = [[NSMutableArray arrayWithCapacity:0] retain];
     weaponArray = [[NSMutableArray arrayWithCapacity:0] retain];
     accumlator = 0;
+    levelInTransition = NO;
     [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(emitEnemy) userInfo:nil repeats:YES];
 	return self;
 }
@@ -87,7 +88,7 @@
     if([gameObjectReadyQueue count] != 0)
     {
         int r = arc4random() % [gameObjectReadyQueue count];
-        
+
         if ([[gameObjectReadyQueue objectAtIndex:r] count] != 0) 
         {
             
@@ -100,8 +101,31 @@
             [[gameObjectReadyQueue objectAtIndex:r] removeObject:gameObject];
             [gameObject release];
         }
+        else
+        {
+            [gameObjectReadyQueue removeObjectAtIndex:r];
+        }
     }
+
 }
+
+-(void)levelPassed
+{
+    if (levelInTransition) {
+        
+    
+        PlayerData *playerData = [Resource PlayerData];
+        playerData.currentLevel = [ NSNumber numberWithInt: [playerData.currentLevel intValue]+1];
+        if ([playerData.currentLevel intValue] > [playerData.currentAvalibaleLevel intValue]) {
+            playerData.currentAvalibaleLevel = [ NSNumber numberWithInt: [playerData.currentLevel intValue]];
+        }
+        [ [ CoreDataHelper sharedCoreDataHelper ] save ];
+    
+        [SceneManager goNextLevel];
+    }
+
+}
+
 -(void)emitWeapon
 {
     
@@ -182,6 +206,11 @@
     
     [self emitWeapon];
     [self cleanUpDeadGameObject];
+    if ([gameObjectReadyQueue count] == 0 && [currentOnSceneArray count] == 0 && [toBeRemovedArray count] == 0 && levelInTransition == NO) 
+    {
+        levelInTransition = YES;
+        [self levelPassed];
+    }
 	
 }
 

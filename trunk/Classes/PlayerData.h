@@ -12,6 +12,8 @@
 @interface PlayerData : NSObject {
     
     NSNumber* currentLevel;
+    NSNumber* currentAvalibaleLevel;
 }
 @property ( retain, nonatomic ) NSNumber* currentLevel;
+@property ( retain, nonatomic ) NSNumber* currentAvalibaleLevel;
 @end
