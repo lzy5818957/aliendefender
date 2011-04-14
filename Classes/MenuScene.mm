@@ -16,12 +16,14 @@
 	
     
     //Main menu
+    
+    CCMenuItemImage *continueGame = [CCMenuItemImage itemFromNormalImage:@"continueBtn.png" selectedImage:@"continueBtn_over.png" target:self selector:@selector(onContinue:)];
 	CCMenuItemImage *startNew = [CCMenuItemImage itemFromNormalImage:@"newGameBtn.png" selectedImage:@"newGameBtn_over.png" target:self selector:@selector(onNewGame:)];
-
-	CCMenuItemImage *credits = [CCMenuItemImage itemFromNormalImage:@"levelBtn.png" selectedImage:@"levelBtn_over.png" target:self selector:@selector(onLevel:)];
-        
-	CCMenu *menu = [CCMenu menuWithItems:startNew, credits, nil];
+	CCMenuItemImage *level = [CCMenuItemImage itemFromNormalImage:@"levelBtn.png" selectedImage:@"levelBtn_over.png" target:self selector:@selector(onLevel:)];
+ 
+	CCMenu *menu = [CCMenu menuWithItems:continueGame,startNew, level, nil];
 	
+    //menu animation
 	for (CCMenuItemFont *each in [menu children]) {
 		each.scaleX = 0.0f;
 		each.scaleY = 0.0f;
@@ -73,12 +75,20 @@
 }
 
 - (void)onNewGame:(id)sender{
+    PlayerData *playerData = [Resource PlayerData];
+    playerData.currentLevel = [ NSNumber numberWithInt: 1 ];
+    [ [ CoreDataHelper sharedCoreDataHelper ] save ];
 	[SceneManager goPlay];
 }
 
 - (void)onLevel:(id)sender{
 	[SceneManager goLevel];
 }
+
+- (void)onContinue:(id)sender{
+	[SceneManager goPlay];
+}
+
 - (void)onHelp:(id)sender{
 	[SceneManager goHelp];
 }

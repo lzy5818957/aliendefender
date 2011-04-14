@@ -21,7 +21,7 @@
 -(id)initWithLevelNumber:(int)levelNumber
 {
     waves = [NSMutableArray arrayWithCapacity:0];
-	[super init];
+	[super init];    
     if (levelNumber == 1) {
         
         WaveObject *wave1 = [WaveObject waveWithnumberOfEnemy:1 Difficulty:1.2 Type:[Alien class]];

@@ -16,11 +16,12 @@
 		return nil;
 	}
 	
-	CCMenuItemFont *ready = [CCMenuItemFont itemFromString:@"Ready" target:self selector: @selector(back:)];
+
     CCMenuItemFont *nextLevel = [CCMenuItemFont itemFromString: [NSString stringWithFormat: @"Next Level is %d", [[Resource PlayerData].currentLevel intValue]]];
-	CCMenu *menu = [CCMenu menuWithItems: ready,nextLevel, nil];
+    CCMenuItemFont *ready = [CCMenuItemFont itemFromString:@"Ready" target:self selector: @selector(back:)];
+	CCMenu *menu = [CCMenu menuWithItems: nextLevel,ready, nil];
 	
-	menu.position = ccp(160, 150);
+	menu.position = ccp(240, 160);
 	[self addChild: menu];
     [menu alignItemsVertically];
 	return self;
