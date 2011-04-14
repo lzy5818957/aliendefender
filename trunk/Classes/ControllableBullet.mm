@@ -8,6 +8,7 @@
 
 #import "ControllableBullet.h"
 
+#define MAX_VELOCITY 10
 
 @implementation ControllableBullet
 -(id)initWithCoords:(CGPoint)p Charge:(double)c Direction:(CGPoint)dir
@@ -44,13 +45,14 @@
     CGPoint controlForce = [Resource AcceValue];
     body->ApplyForce(b2Vec2(0,body->GetMass()*10.1),body->GetWorldCenter());
     
-    if (body->GetLinearVelocity().x <= 10)  {
-        body->ApplyForce(b2Vec2(0,controlForce.x*3),body->GetWorldCenter());
+    if (body->GetLinearVelocity().x <= MAX_VELOCITY)  {
+        body->ApplyForce(b2Vec2(0,controlForce.x*body->GetLinearVelocity().x),body->GetWorldCenter());
 
     }else
     {
         //limite bullet speed by giving a negative force accoding to it's volicity
         body->ApplyForce(b2Vec2(-(body->GetLinearVelocity().x),-(body->GetLinearVelocity().y)),body->GetWorldCenter());
+        body->ApplyForce(b2Vec2(0,controlForce.x*body->GetLinearVelocity().x),body->GetWorldCenter());
     }
     
 }

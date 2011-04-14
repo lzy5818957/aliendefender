@@ -14,6 +14,7 @@
 -(id)init
 {
     self = [super init];
+    age = 0;
     fixtureDef.filter.groupIndex = -4;
     return self;
 }

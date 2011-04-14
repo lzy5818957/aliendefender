@@ -11,6 +11,7 @@
 
 @interface StaticEnemyObject : EnemyObject {
     
+    int age;
 }
 
 @end

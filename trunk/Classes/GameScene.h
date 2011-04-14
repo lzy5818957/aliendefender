@@ -43,4 +43,5 @@
 -(void) back: (id) sender;
 -(void) pause: (id) sender;
 -(void) play: (id) sender;
+-(void) changeWeapon: (id) sender;
 @end

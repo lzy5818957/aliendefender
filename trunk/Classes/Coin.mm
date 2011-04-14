@@ -8,6 +8,7 @@
 
 #import "Coin.h"
 
+#define MAX_AGE 400
 
 @implementation Coin
 
@@ -34,6 +35,19 @@
 {
     [super update];
     [self move];
+    [self grow];
+}
+
+-(void)grow
+{
+    if(age < MAX_AGE)
+    {
+        age += 1;
+    }
+    else
+    {
+        toBeRemoved = YES;
+    }
 }
 
 -(void)dealloc

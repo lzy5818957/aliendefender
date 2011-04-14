@@ -68,14 +68,16 @@
         
         
         CCMenuItemImage *pause = [CCMenuItemImage  itemFromNormalImage:@"pauseBtn.png" selectedImage:@"pauseBtn_over.png" target:self selector:@selector(pause:)];
-        
         pause.position = ccp(15,305);
+        
+        CCMenuItemImage *changeWeapon = [CCMenuItemImage  itemFromNormalImage:@"changeWeaponBtn.png" selectedImage:@"changeWeaponBtn.png" target:self selector:@selector(changeWeapon:)];
+        changeWeapon.position = ccp(240,300);
         
         CCMenuItem *shoot = [CCMenuItemImage itemFromNormalImage:@"shootBtn.png" selectedImage:@"shootBtn_over.png" target:self selector:@selector(shoot:)];
         shoot.position = ccp(40,80);
         shoot.tag = ktagShootBtn;
         
-        CCMenu *menu = [CCMenu menuWithItems: pause, shoot,nil];
+        CCMenu *menu = [CCMenu menuWithItems: pause, changeWeapon, shoot,nil];
         menu.position = ccp(0, 0);
         [self addChild: menu z:1 tag:ktagGameMenu];
         
@@ -114,6 +116,11 @@
 	[pauseMenu alignItemsVerticallyWithPadding: 40.0f];
     
 	[[CCDirector sharedDirector] pause];
+}
+
+-(void) changeWeapon: (id) sender{
+    
+
 }
 
 -(void) play: (id) sender{

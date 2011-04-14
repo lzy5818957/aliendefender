@@ -14,4 +14,5 @@
 }
 -(void)update;
 -(void)move;
+-(void)grow;
 @end

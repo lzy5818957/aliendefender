@@ -40,6 +40,9 @@
 		4AA40695133AF21200692288 /* Exit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40694133AF20F00692288 /* Exit.mm */; };
 		4AA40698133AFE0400692288 /* PlayerLife.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA40697133AFE0300692288 /* PlayerLife.mm */; };
 		4AA4069B133B185E00692288 /* UFO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4069A133B185C00692288 /* UFO.mm */; };
+		4ABC67AB1356911500E60742 /* continueBtn_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC67A91356911500E60742 /* continueBtn_over.png */; };
+		4ABC67AC1356911500E60742 /* continueBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC67AA1356911500E60742 /* continueBtn.png */; };
+		4ABC67AE13569A7A00E60742 /* changeWeaponBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC67AD13569A7A00E60742 /* changeWeaponBtn.png */; };
 		4AC0EE7B134D84C3004AC975 /* CoolDownBar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */; };
 		4AC0EE7D134D866F004AC975 /* CoolDownBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0EE7C134D866F004AC975 /* CoolDownBar.png */; };
 		4AC0EE81134D9125004AC975 /* StaticEnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE80134D9125004AC975 /* StaticEnemyObject.mm */; };
@@ -450,6 +453,9 @@
 		4AA40697133AFE0300692288 /* PlayerLife.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerLife.mm; sourceTree = "<group>"; };
 		4AA40699133B185B00692288 /* UFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFO.h; sourceTree = "<group>"; };
 		4AA4069A133B185C00692288 /* UFO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UFO.mm; sourceTree = "<group>"; };
+		4ABC67A91356911500E60742 /* continueBtn_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continueBtn_over.png; sourceTree = "<group>"; };
+		4ABC67AA1356911500E60742 /* continueBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continueBtn.png; sourceTree = "<group>"; };
+		4ABC67AD13569A7A00E60742 /* changeWeaponBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeWeaponBtn.png; sourceTree = "<group>"; };
 		4AC0EE79134D84C3004AC975 /* CoolDownBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolDownBar.h; sourceTree = "<group>"; };
 		4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoolDownBar.mm; sourceTree = "<group>"; };
 		4AC0EE7C134D866F004AC975 /* CoolDownBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoolDownBar.png; sourceTree = "<group>"; };
@@ -940,6 +946,9 @@
 		4A1024AA13492A0700F31366 /* ButtonResource */ = {
 			isa = PBXGroup;
 			children = (
+				4ABC67AD13569A7A00E60742 /* changeWeaponBtn.png */,
+				4ABC67A91356911500E60742 /* continueBtn_over.png */,
+				4ABC67AA1356911500E60742 /* continueBtn.png */,
 				4A99939D134C4718006BBBDE /* shootBtn_over.png */,
 				4A99939E134C4718006BBBDE /* shootBtn.png */,
 				4AC87D54134997290091CA04 /* playBtn_over.png */,
@@ -2018,6 +2027,9 @@
 				4A9993A8134C5972006BBBDE /* DirectionBtn.png in Resources */,
 				4AC0EE7D134D866F004AC975 /* CoolDownBar.png in Resources */,
 				4AC0EE8B134D95D2004AC975 /* SilverCoin.png in Resources */,
+				4ABC67AB1356911500E60742 /* continueBtn_over.png in Resources */,
+				4ABC67AC1356911500E60742 /* continueBtn.png in Resources */,
+				4ABC67AE13569A7A00E60742 /* changeWeaponBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
