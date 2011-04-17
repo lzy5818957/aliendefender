@@ -33,4 +33,5 @@
 @property (nonatomic,retain) CoolDownBar *coolDownBar;
 
 -(PlayerWeaponObject*)loadWeaponCharge:(double) charge Direction:(CGPoint)dir;
+-(void)changeWeapon;
 @end

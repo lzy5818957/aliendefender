@@ -10,7 +10,7 @@
 
 
 @implementation PlayerWeaponObject
-@synthesize attack;
+@synthesize attack,rechargeTime;
 
 -(id)init
 {

@@ -43,6 +43,11 @@
 		4ABC67AB1356911500E60742 /* continueBtn_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC67A91356911500E60742 /* continueBtn_over.png */; };
 		4ABC67AC1356911500E60742 /* continueBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC67AA1356911500E60742 /* continueBtn.png */; };
 		4ABC67AE13569A7A00E60742 /* changeWeaponBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC67AD13569A7A00E60742 /* changeWeaponBtn.png */; };
+		4ABF17B4135B2EE90061341E /* controllableBulletBtn_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF17B0135B2EE90061341E /* controllableBulletBtn_over.png */; };
+		4ABF17B5135B2EE90061341E /* controllableBulletBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF17B1135B2EE90061341E /* controllableBulletBtn.png */; };
+		4ABF17B6135B2EE90061341E /* physicalBulletBtn_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF17B2135B2EE90061341E /* physicalBulletBtn_over.png */; };
+		4ABF17B7135B2EE90061341E /* physicalBulletBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF17B3135B2EE90061341E /* physicalBulletBtn.png */; };
+		4ABF17B9135B31D00061341E /* changeWeaponBtn_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF17B8135B31D00061341E /* changeWeaponBtn_over.png */; };
 		4AC0EE7B134D84C3004AC975 /* CoolDownBar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */; };
 		4AC0EE7D134D866F004AC975 /* CoolDownBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0EE7C134D866F004AC975 /* CoolDownBar.png */; };
 		4AC0EE81134D9125004AC975 /* StaticEnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE80134D9125004AC975 /* StaticEnemyObject.mm */; };
@@ -456,6 +461,11 @@
 		4ABC67A91356911500E60742 /* continueBtn_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continueBtn_over.png; sourceTree = "<group>"; };
 		4ABC67AA1356911500E60742 /* continueBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continueBtn.png; sourceTree = "<group>"; };
 		4ABC67AD13569A7A00E60742 /* changeWeaponBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeWeaponBtn.png; sourceTree = "<group>"; };
+		4ABF17B0135B2EE90061341E /* controllableBulletBtn_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controllableBulletBtn_over.png; sourceTree = "<group>"; };
+		4ABF17B1135B2EE90061341E /* controllableBulletBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controllableBulletBtn.png; sourceTree = "<group>"; };
+		4ABF17B2135B2EE90061341E /* physicalBulletBtn_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = physicalBulletBtn_over.png; sourceTree = "<group>"; };
+		4ABF17B3135B2EE90061341E /* physicalBulletBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = physicalBulletBtn.png; sourceTree = "<group>"; };
+		4ABF17B8135B31D00061341E /* changeWeaponBtn_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeWeaponBtn_over.png; sourceTree = "<group>"; };
 		4AC0EE79134D84C3004AC975 /* CoolDownBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolDownBar.h; sourceTree = "<group>"; };
 		4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoolDownBar.mm; sourceTree = "<group>"; };
 		4AC0EE7C134D866F004AC975 /* CoolDownBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoolDownBar.png; sourceTree = "<group>"; };
@@ -888,7 +898,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				4A762CE4134DB08E0039CD77 /* CoreData.framework */,
 				504DFC7310AF1758006D82FE /* LICENSE.cocos2d */,
 				504DFC7410AF1758006D82FE /* LICENSE.cocosdenshion */,
 				E0C5506C11FA3ABC00B9E4CB /* LICENSE.box2d */,
@@ -914,6 +923,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A762CE4134DB08E0039CD77 /* CoreData.framework */,
 				DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */,
 				DCCBF1B80F6022AE0040855A /* Foundation.framework */,
 				DCCBF1BA0F6022AE0040855A /* OpenGLES.framework */,
@@ -946,6 +956,11 @@
 		4A1024AA13492A0700F31366 /* ButtonResource */ = {
 			isa = PBXGroup;
 			children = (
+				4ABF17B8135B31D00061341E /* changeWeaponBtn_over.png */,
+				4ABF17B0135B2EE90061341E /* controllableBulletBtn_over.png */,
+				4ABF17B1135B2EE90061341E /* controllableBulletBtn.png */,
+				4ABF17B2135B2EE90061341E /* physicalBulletBtn_over.png */,
+				4ABF17B3135B2EE90061341E /* physicalBulletBtn.png */,
 				4ABC67AD13569A7A00E60742 /* changeWeaponBtn.png */,
 				4ABC67A91356911500E60742 /* continueBtn_over.png */,
 				4ABC67AA1356911500E60742 /* continueBtn.png */,
@@ -2030,6 +2045,11 @@
 				4ABC67AB1356911500E60742 /* continueBtn_over.png in Resources */,
 				4ABC67AC1356911500E60742 /* continueBtn.png in Resources */,
 				4ABC67AE13569A7A00E60742 /* changeWeaponBtn.png in Resources */,
+				4ABF17B4135B2EE90061341E /* controllableBulletBtn_over.png in Resources */,
+				4ABF17B5135B2EE90061341E /* controllableBulletBtn.png in Resources */,
+				4ABF17B6135B2EE90061341E /* physicalBulletBtn_over.png in Resources */,
+				4ABF17B7135B2EE90061341E /* physicalBulletBtn.png in Resources */,
+				4ABF17B9135B31D00061341E /* changeWeaponBtn_over.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

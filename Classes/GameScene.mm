@@ -70,10 +70,24 @@
         CCMenuItemImage *pause = [CCMenuItemImage  itemFromNormalImage:@"pauseBtn.png" selectedImage:@"pauseBtn_over.png" target:self selector:@selector(pause:)];
         pause.position = ccp(15,305);
         
-        CCMenuItemImage *changeWeapon = [CCMenuItemImage  itemFromNormalImage:@"changeWeaponBtn.png" selectedImage:@"changeWeaponBtn.png" target:self selector:@selector(changeWeapon:)];
+        CCMenuItemImage *changeWeapon = [CCMenuItemImage  itemFromNormalImage:@"changeWeaponBtn.png" selectedImage:@"changeWeaponBtn_over.png" target:self selector:@selector(changeWeapon:)];
         changeWeapon.position = ccp(240,300);
         
-        CCMenuItem *shoot = [CCMenuItemImage itemFromNormalImage:@"shootBtn.png" selectedImage:@"shootBtn_over.png" target:self selector:@selector(shoot:)];
+        CCMenuItemImage *shoot;
+        if(gameWorld.player.currentWeaponType == [PhysicalBullet class])
+        {
+            shoot = [CCMenuItemImage itemFromNormalSprite:[CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"physicalBulletBtn"]]
+                                           selectedSprite:[CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"physicalBulletBtn_over"]]
+                                                   target:self 
+                                                 selector:@selector(shoot:)];
+        }
+        else if(gameWorld.player.currentWeaponType == [ControllableBullet class])
+        {
+            shoot = [CCMenuItemImage itemFromNormalSprite:[CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"controllableBulletBtn"]]
+                                           selectedSprite:[CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"controllableBulletBtn_over"]]
+                                                   target:self 
+                                                 selector:@selector(shoot:)];
+        }
         shoot.position = ccp(40,80);
         shoot.tag = ktagShootBtn;
         
@@ -120,7 +134,19 @@
 
 -(void) changeWeapon: (id) sender{
     
-
+    [gameWorld.player changeWeapon];
+    CCMenuItemImage *shootBtn = (CCMenuItemImage*)[(CCMenu*)[self getChildByTag:ktagGameMenu] getChildByTag:ktagShootBtn];
+    if(gameWorld.player.currentWeaponType == [PhysicalBullet class])
+    {
+        [shootBtn setNormalImage:[CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"physicalBulletBtn"]]];
+        [shootBtn setSelectedImage:[CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"physicalBulletBtn_over"]]];
+    }
+    else if(gameWorld.player.currentWeaponType == [ControllableBullet class])
+    {
+        [shootBtn setNormalImage:[CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"controllableBulletBtn"]]];
+        [shootBtn setSelectedImage:[CCSprite spriteWithTexture:[[Resource TextureDictionary] valueForKey:@"controllableBulletBtn_over"]]];
+    }
+    
 }
 
 -(void) play: (id) sender{
@@ -150,7 +176,7 @@
         chargeStart = NO;
         [[gameWorld weaponArray] addObject:weapon];
         
-        [gameWorld.player.coolDownBar resetTimer];
+        [gameWorld.player.coolDownBar resetTimer:weapon.rechargeTime];
         
     }
     else
@@ -222,6 +248,7 @@
     }
     
     gameWorld.player.chargeBar.charge = chargeTimer;
+    
     
 }
 

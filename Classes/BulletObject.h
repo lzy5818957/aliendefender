@@ -13,8 +13,8 @@
 
     double charge;
     CGPoint direction;
-
 }
 @property(nonatomic, readwrite)double charge;
 @property(nonatomic, readwrite)CGPoint direction;
+
 @end

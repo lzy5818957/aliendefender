@@ -31,6 +31,7 @@
     
     charge = c;
     direction = dir;
+    rechargeTime = 100;
     
 	return self;
 }

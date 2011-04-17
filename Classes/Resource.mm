@@ -71,6 +71,18 @@ static float accelY;
         //add directionBtn
         CCTexture2D *directionBtn = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"DirectionBtn"]] autorelease];
         [textureDictionary setValue:directionBtn forKey:@"DirectionBtn"];
+        
+        //add PhyscialBulletBtn
+        CCTexture2D *physicalBulletBtn = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"physicalBulletBtn"]] autorelease];
+        [textureDictionary setValue:physicalBulletBtn forKey:@"physicalBulletBtn"];
+        CCTexture2D *physicalBulletBtn_over = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"physicalBulletBtn_over"]] autorelease];
+        [textureDictionary setValue:physicalBulletBtn_over forKey:@"physicalBulletBtn_over"];
+        
+        //add ControllableBulletBtn
+        CCTexture2D *controllableBulletBtn = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"controllableBulletBtn"]] autorelease];
+        [textureDictionary setValue:controllableBulletBtn forKey:@"controllableBulletBtn"];
+        CCTexture2D *controllableBulletBtn_over = [[[CCTexture2D alloc] initWithImage: [UIImage imageNamed:@"controllableBulletBtn_over"]] autorelease];
+        [textureDictionary setValue:controllableBulletBtn_over forKey:@"controllableBulletBtn_over"];
     }
     
     return textureDictionary;
