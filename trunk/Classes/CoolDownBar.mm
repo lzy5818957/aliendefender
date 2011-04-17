@@ -66,9 +66,9 @@
     
 }
 
--(void)resetTimer
+-(void)resetTimer:(int)rechargeTime;
 {
-    timeLeft = 100;
+    timeLeft = rechargeTime;
 }
 
 -(void)dealloc

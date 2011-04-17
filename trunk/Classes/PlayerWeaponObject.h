@@ -12,8 +12,12 @@
 @interface PlayerWeaponObject : GameObject {
     
     float attack;
+    int rechargeTime;
 }
+
 @property (nonatomic,readwrite) float attack;
+@property(nonatomic, readwrite)int rechargeTime;
+
 -(void)update;
 -(void)fire;
 @end

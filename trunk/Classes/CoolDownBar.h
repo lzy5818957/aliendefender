@@ -21,5 +21,5 @@
 -(id)initWithCoords:(CGPoint)p;
 -(void)update;
 -(void)move;
--(void)resetTimer;
+-(void)resetTimer:(int)rechargeTime;
 @end

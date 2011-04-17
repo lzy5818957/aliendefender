@@ -50,6 +50,17 @@
     playerLife.life -= 1;
 }
 
+-(void)changeWeapon
+{
+    if (currentWeaponType == [PhysicalBullet class]) {
+        currentWeaponType = [ControllableBullet class];
+    }
+    else
+    {
+        currentWeaponType = [PhysicalBullet class];
+    }
+}
+
 -(void)dealloc
 {
     [playerLife release];
