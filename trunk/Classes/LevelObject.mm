@@ -22,21 +22,13 @@
 {
     waves = [NSMutableArray arrayWithCapacity:0];
 	[super init];    
-    if (levelNumber == 1) {
-        
-        WaveObject *wave1 = [WaveObject waveWithnumberOfEnemy:1 Difficulty:1.2 Type:[Alien class]];
-        WaveObject *wave2 = [WaveObject waveWithnumberOfEnemy:1 Difficulty:0.3 Type:[UFO class]];
-        WaveObject *wave3 = [WaveObject waveWithnumberOfEnemy:1 Difficulty:0.3 Type:[SilverCoin class]];
-        [waves addObject:wave1];
-        [waves addObject:wave2];
-        [waves addObject:wave3];
-    }
-    else
-    {
-        //will give definition of level later
-        WaveObject *wave3 = [WaveObject waveWithnumberOfEnemy:30 Difficulty:0.3 Type:[SilverCoin class]];
-        [waves addObject:wave3];
-    }
+
+    WaveObject *wave1 = [WaveObject waveWithnumberOfEnemy:levelNumber*4 Difficulty:levelNumber*0.3 Type:[Alien class]];
+    WaveObject *wave2 = [WaveObject waveWithnumberOfEnemy:levelNumber*3 Difficulty:levelNumber*0.3 Type:[UFO class]];
+    WaveObject *wave3 = [WaveObject waveWithnumberOfEnemy:levelNumber*1 Difficulty:0.1 Type:[SilverCoin class]];
+    [waves addObject:wave1];
+    [waves addObject:wave2];
+    [waves addObject:wave3];
     
 	return self;
 }

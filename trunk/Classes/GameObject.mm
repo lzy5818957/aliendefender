@@ -32,7 +32,7 @@
     //dead update
     CGSize winsize = [CCDirector sharedDirector].winSize;
     //if the gameObject is dead or out of bound
-    if (health <= 0 || sprite.position.x < 0 || sprite.position.y < 0 ||
+    if (sprite.position.x < 0 || sprite.position.y < 0 ||
         sprite.position.x > winsize.width + 50 || sprite.position.y > winsize.height + 30) 
     {
         [self setToBeRemoved:true];

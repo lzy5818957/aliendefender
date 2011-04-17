@@ -13,11 +13,14 @@
     
     float attack;
     int rechargeTime;
+    int age;
 }
 
 @property (nonatomic,readwrite) float attack;
-@property(nonatomic, readwrite)int rechargeTime;
+@property(nonatomic, readwrite) int rechargeTime;
+@property(nonatomic, readwrite) int age;
 
 -(void)update;
 -(void)fire;
+-(void)grow;
 @end
