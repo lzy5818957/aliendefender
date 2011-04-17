@@ -7,10 +7,10 @@
 //
 
 #import "PlayerWeaponObject.h"
-
+#define MAX_AGE 250
 
 @implementation PlayerWeaponObject
-@synthesize attack,rechargeTime;
+@synthesize attack,rechargeTime, age;
 
 -(id)init
 {
@@ -19,12 +19,26 @@
     return self;
     
 }
+
 -(void)update
 {
     [super update];
-    
+    [self grow];
 
 }
+
+-(void)grow
+{
+    if(age < MAX_AGE)
+    {
+        age += 1;
+    }
+    else
+    {
+        toBeRemoved = YES;
+    }
+}
+
 -(void)fire
 {
     

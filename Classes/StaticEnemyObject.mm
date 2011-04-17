@@ -24,14 +24,17 @@
     //flying
     if (sprite.position.y <= 280) 
     {
-        
         body->ApplyForce(b2Vec2(0,body->GetMass()*10.5),body->GetWorldCenter());
     }
     
 }
+
 -(void)update
 {
     [super update];
+    if (health <= 0 ) {
+        [self setToBeRemoved:YES];
+    }
     
 }
 

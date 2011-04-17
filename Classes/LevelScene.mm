@@ -16,19 +16,32 @@
 	}
 
 	CCMenuItemFont *back = [CCMenuItemFont itemFromString:@"back" target:self selector: @selector(back:)];
+    back.position = ccp(420, 20);
+    
 	CCMenu *menu = [CCMenu menuWithItems: back, nil];
-	
-	menu.position = ccp(160, 150);
+	menu.position = ccp(0, 0);
+    
 	[self addChild: menu];
     
+    //arrange level button
+    int x = 60;
+    int y = 250;
+    
     for (int i = 1; i <= [[Resource PlayerData].currentAvalibaleLevel intValue];  i++) {
-        CCMenuItemFont *item = [CCMenuItemFont itemFromString:[NSString stringWithFormat:@"Level #%d", i] target:self selector:@selector(onLevelNumber:)];
+        CCMenuItemFont *item = [CCMenuItemFont itemFromString:[NSString stringWithFormat:@"%d", i] target:self selector:@selector(onLevelNumber:)];
         item.tag = i;
+        item.position = CGPointMake(x, y);
+        
+        if(x > 400)
+        {   
+            x = 60;
+            y -= 50;
+        }
+        x += 60;
+        
         [menu addChild:item];
     }
 	
-    [menu alignItemsVertically];
-    
     CCSprite *bg = [CCSprite spriteWithFile: @"menubg.png"];
 	bg.position = ccp(240,160);
 	[self addChild: bg z:-1];

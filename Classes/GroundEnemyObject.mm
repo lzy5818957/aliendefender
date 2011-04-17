@@ -18,6 +18,16 @@
     return self;
 }
 
+-(void)update
+{
+    [super update];
+    
+    if (health <= 0 ) {
+        [self setToBeRemoved:YES];
+    }
+}
+
+
 -(void)move
 {
     if (body->GetLinearVelocity().Length() <= speed/10) 

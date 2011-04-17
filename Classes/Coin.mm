@@ -22,7 +22,7 @@
 	fixtureDef.shape = &shape;
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
-    
+    //fixtureDef.isSensor = TRUE;
     speed = 0.0;
     return self;
 }

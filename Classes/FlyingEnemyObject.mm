@@ -20,12 +20,19 @@
 
 -(void)move
 {
-    //flying
-    if (sprite.position.y <= 280) 
+    if (health >= 0) {
+        //flying
+        if (sprite.position.y <= 280) 
+        {
+            
+            body->ApplyForce(b2Vec2(0,body->GetMass()*10.5),body->GetWorldCenter());
+        }
+    }
+    else
     {
         
-        body->ApplyForce(b2Vec2(0,body->GetMass()*10.5),body->GetWorldCenter());
     }
+    
     
 }
 -(void)update

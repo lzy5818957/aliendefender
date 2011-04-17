@@ -13,4 +13,5 @@
     
 }
 -(void)move;
+-(void)update;
 @end

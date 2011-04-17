@@ -21,7 +21,7 @@
 	sprite.position = p;
 
 	bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
-    
+
 	return self;
 }
 

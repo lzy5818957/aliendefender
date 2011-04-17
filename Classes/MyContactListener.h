@@ -9,7 +9,8 @@
 #import "EnemyObject.h"
 #import "Ground.h"
 #import "Exit.h"
-#import "Exit.h"
+#import "FlyingEnemyObject.h"
+#import "GroundEnemyObject.h"
 
 struct MyContact {
     b2Fixture *fixtureA;

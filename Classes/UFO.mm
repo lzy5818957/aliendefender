@@ -26,7 +26,7 @@
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
 
-    speed = 3.0;
+    speed = 5.0;
     
     
 	return self;
@@ -34,11 +34,13 @@
 -(void)move
 {
     [super move];
+    
     if (body->GetLinearVelocity().Length() <= speed/10) 
     {
         
-        body->ApplyForce(b2Vec2(-0.05*speed,0),body->GetWorldCenter());
+        body->ApplyForce(b2Vec2(-0.1*speed,0),body->GetWorldCenter());
     }
+    
     
 }
 -(void)update

@@ -49,12 +49,12 @@ void MyContactListener::PreSolve(b2Contact* contact,
             
             if ([fixtureAGameObject isKindOfClass:[PlayerWeaponObject class]])
             {
-                [fixtureAGameObject setHealth:0];
+                ((PlayerWeaponObject*)fixtureAGameObject).age += 80;
                 [fixtureBGameObject damage:((PlayerWeaponObject*)fixtureAGameObject).attack];
             }
             else
             {
-                [fixtureBGameObject setHealth:0];
+                ((PlayerWeaponObject*)fixtureBGameObject).age += 80;
                 [fixtureAGameObject damage:((PlayerWeaponObject*)fixtureBGameObject).attack];
             }
             
@@ -80,7 +80,7 @@ void MyContactListener::PreSolve(b2Contact* contact,
             
         }
         
-        //Exit vs Alien
+        //Exit vs Enemy
         if (
             ([fixtureAGameObject isKindOfClass:[EnemyObject class]] && [fixtureBGameObject isKindOfClass:[Exit class]] )
             ||
@@ -97,6 +97,47 @@ void MyContactListener::PreSolve(b2Contact* contact,
             else
             {
                 [((Exit*)fixtureAGameObject) enemyDidPassExit];
+                [fixtureBGameObject setToBeRemoved:YES];
+            }
+            
+        }
+        
+        //FlyingEnemy vs GroundEnemy
+        if (
+            ([fixtureAGameObject isKindOfClass:[FlyingEnemyObject class]] && [fixtureBGameObject isKindOfClass:[GroundEnemyObject class]] )
+            ||
+            ([fixtureAGameObject isKindOfClass:[GroundEnemyObject class]] && [fixtureBGameObject isKindOfClass:[FlyingEnemyObject class]])
+            ) 
+        {
+            
+            if([fixtureAGameObject isKindOfClass:[FlyingEnemyObject class]])
+            {
+                [fixtureAGameObject setToBeRemoved:YES];
+                [fixtureBGameObject setToBeRemoved:YES];
+                
+            }
+            else
+            {
+                [fixtureAGameObject setToBeRemoved:YES];
+                [fixtureBGameObject setToBeRemoved:YES];
+            }
+            
+        }
+        
+        //FlyingEnemy vs Ground
+        if (
+            ([fixtureAGameObject isKindOfClass:[FlyingEnemyObject class]] && [fixtureBGameObject isKindOfClass:[ScreenBoundryObject class]] )
+            ||
+            ([fixtureAGameObject isKindOfClass:[ScreenBoundryObject class]] && [fixtureBGameObject isKindOfClass:[FlyingEnemyObject class]])
+            ) 
+        {
+            
+            if([fixtureAGameObject isKindOfClass:[FlyingEnemyObject class]])
+            {
+                [fixtureAGameObject setToBeRemoved:YES];
+            }
+            else
+            {
                 [fixtureBGameObject setToBeRemoved:YES];
             }
             
