@@ -101,17 +101,67 @@ static float accelY;
         playerData.currentAvalibaleLevel = [ NSNumber numberWithInt: 1 ];
         [ [ CoreDataHelper sharedCoreDataHelper ] save ];
     }
-    else
+
+    for ( PlayerData* currentPlayer in arrayOfPlayer )
     {
-        for ( PlayerData* currentPlayer in arrayOfPlayer )
-        {
-            playerData = currentPlayer;
-        }
-        
+        playerData = currentPlayer;
     }
     return playerData;
 }
 
++(ScoreData*)ScoreData: (NSNumber*) level
+{
+    static ScoreData* scoreData;
+    NSArray* arrayOfScores = [ [ CoreDataHelper sharedCoreDataHelper ] getAllObjectsOfType: @"ScoreData" predicateString: nil ];
+    
+    if ([arrayOfScores count] == 0 ) {
+        
+        for (int i = 0; i <= 16; i++) {
+            
+            scoreData = ( ScoreData* )[ [ CoreDataHelper sharedCoreDataHelper ] createObjectOfType: @"ScoreData" ];
+            scoreData.score = [ NSNumber numberWithInt: 0 ];
+            scoreData.level = [ NSNumber numberWithInt: i ];
+            [ [ CoreDataHelper sharedCoreDataHelper ] save ];
+        }
+        
+    }
+
+    for ( ScoreData* currentScore in arrayOfScores )
+    {
+        if([currentScore.level intValue] == [level intValue])
+        {
+            scoreData = currentScore;
+            
+        }
+    }
+        
+    return scoreData;
+}
+
++(int*)Score
+{
+    static int score;
+
+    return &score;
+}
+
++(void)addScore:(int)value
+{
+    int *score = [Resource Score];
+    (*score) += value;
+}
+
++(void)saveScore
+{
+    PlayerData *playerData = [Resource PlayerData];
+    ScoreData* scoreData = [Resource ScoreData:playerData.currentLevel];
+    int score = *[Resource Score];
+    if (score > [scoreData.score intValue]) {
+        [scoreData setScore:[NSNumber numberWithInt:score]];
+        [ [ CoreDataHelper sharedCoreDataHelper ] save ];
+    }
+
+}
 
 +(CGPoint)AcceValue
 {

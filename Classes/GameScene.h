@@ -36,7 +36,6 @@
 
 @property(nonatomic,retain) GameWorld *gameWorld;
 @property(nonatomic,retain) LevelObject *level;
-
 @property(nonatomic,readonly) CGPoint weaponDirection;
 // returns a Scene that contains the GameScene as the only child
 +(id) scene;

@@ -46,7 +46,7 @@ void MyContactListener::PreSolve(b2Contact* contact,
             ([fixtureAGameObject isKindOfClass:[EnemyObject class]] && [fixtureBGameObject isKindOfClass:[PlayerWeaponObject class]])
             ) 
         {
-            
+            [Resource addScore:50];
             if ([fixtureAGameObject isKindOfClass:[PlayerWeaponObject class]])
             {
                 ((PlayerWeaponObject*)fixtureAGameObject).age += 80;
@@ -56,6 +56,7 @@ void MyContactListener::PreSolve(b2Contact* contact,
             {
                 ((PlayerWeaponObject*)fixtureBGameObject).age += 80;
                 [fixtureAGameObject damage:((PlayerWeaponObject*)fixtureBGameObject).attack];
+                
             }
             
             
@@ -121,7 +122,7 @@ void MyContactListener::PreSolve(b2Contact* contact,
                 [fixtureAGameObject setToBeRemoved:YES];
                 [fixtureBGameObject setToBeRemoved:YES];
             }
-            
+            [Resource addScore:200];
         }
         
         //FlyingEnemy vs Ground

@@ -11,7 +11,7 @@
 #import "Exit.h"
 #import "FlyingEnemyObject.h"
 #import "GroundEnemyObject.h"
-
+#import "Resource.h"
 struct MyContact {
     b2Fixture *fixtureA;
     b2Fixture *fixtureB;

@@ -86,12 +86,13 @@
 
 -(void)emitEnemy
 {
-    static uint r;
+
     
     //randomly take an enemy from ready queue and emit it
     if([gameObjectReadyQueue count] != 0)
     {
-
+        int r = arc4random() % [gameObjectReadyQueue count];
+        
         if ([[gameObjectReadyQueue objectAtIndex:r] count] != 0) 
         {
             
@@ -109,20 +110,20 @@
             [gameObjectReadyQueue removeObjectAtIndex:r];
         }
         
-        r += 1;
+
     }
     
-    if (r >= [gameObjectReadyQueue count]) {
-        r = 0;
-    }
+
 }
 
 -(void)levelPassed
 {
     if (levelInTransition) {
         
-    
+        [Resource saveScore];
+        
         PlayerData *playerData = [Resource PlayerData];
+        
         playerData.currentLevel = [ NSNumber numberWithInt: [playerData.currentLevel intValue]+1];
         if ([playerData.currentLevel intValue] > [playerData.currentAvalibaleLevel intValue]) {
             playerData.currentAvalibaleLevel = [ NSNumber numberWithInt: [playerData.currentLevel intValue]];

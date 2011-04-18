@@ -24,20 +24,21 @@
 	[self addChild: menu];
     
     //arrange level button
-    int x = 60;
-    int y = 250;
+    int x = 20;
+    int y = 280;
     
     for (int i = 1; i <= [[Resource PlayerData].currentAvalibaleLevel intValue];  i++) {
-        CCMenuItemFont *item = [CCMenuItemFont itemFromString:[NSString stringWithFormat:@"%d", i] target:self selector:@selector(onLevelNumber:)];
+        int score = [((ScoreData*)[Resource ScoreData: [NSNumber numberWithInt:i]]).score intValue];
+        CCMenuItemFont *item = [CCMenuItemFont itemFromString:[NSString stringWithFormat:@"Level%d Score:%d", i ,score] 
+                                                       target:self 
+                                                     selector:@selector(onLevelNumber:)];
+        item.anchorPoint = CGPointMake(0.0f, 0.0f);
         item.tag = i;
         item.position = CGPointMake(x, y);
         
-        if(x > 400)
-        {   
-            x = 60;
-            y -= 50;
-        }
-        x += 60;
+
+        y -= 50;
+        
         
         [menu addChild:item];
     }

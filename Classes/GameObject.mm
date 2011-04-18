@@ -36,6 +36,7 @@
         sprite.position.x > winsize.width + 50 || sprite.position.y > winsize.height + 30) 
     {
         [self setToBeRemoved:true];
+        
     }
     
 

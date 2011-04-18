@@ -24,7 +24,14 @@
 	menu.position = ccp(240, 160);
 	[self addChild: menu];
     [menu alignItemsVertically];
+    [self saveLastLevelData];
 	return self;
+}
+
+-(void)saveLastLevelData
+{
+    
+
 }
 
 -(void) back: (id) sender{

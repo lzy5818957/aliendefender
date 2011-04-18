@@ -13,5 +13,6 @@
 @interface NextLevelScene : BaseScene {
     
 }
+-(void) saveLastLevelData;
 -(void) back: (id) sender;
 @end
