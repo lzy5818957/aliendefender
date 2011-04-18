@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-
 #import "BulletObject.h"
-
+#import "SoundManager.h"
 
 @interface PhysicalBullet : BulletObject {
     

@@ -62,6 +62,7 @@
     assert(body != nil);
     CGPoint p = CGPointMake(direction.x*charge/3, direction.y*charge/3);
     body->ApplyLinearImpulse(b2Vec2(p.x,p.y),body->GetWorldCenter());
+    [SoundManager playControllableBulletShoot];
     
 }
 -(void)dealloc
