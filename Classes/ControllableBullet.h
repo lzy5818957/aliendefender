@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BulletObject.h"
 #import "Resource.h"
+#import "SoundManager.h"
 @interface ControllableBullet : BulletObject {
     
 }

@@ -52,6 +52,9 @@
 		4AC0668D135BABF700A0F0C4 /* scoreFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0668B135BABF700A0F0C4 /* scoreFont.fnt */; };
 		4AC0668E135BABF700A0F0C4 /* scoreFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0668C135BABF700A0F0C4 /* scoreFont.png */; };
 		4AC06691135BB19800A0F0C4 /* ScoreData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC06690135BB19800A0F0C4 /* ScoreData.mm */; };
+		4AC06696135BF65100A0F0C4 /* SoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC06695135BF65100A0F0C4 /* SoundManager.mm */; };
+		4AC06698135BF7C300A0F0C4 /* physicalBulletShoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4AC06697135BF7C300A0F0C4 /* physicalBulletShoot.wav */; };
+		4AC066A6135BFA7000A0F0C4 /* controllableBulletShoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4AC066A5135BFA7000A0F0C4 /* controllableBulletShoot.wav */; };
 		4AC0EE7B134D84C3004AC975 /* CoolDownBar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */; };
 		4AC0EE7D134D866F004AC975 /* CoolDownBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0EE7C134D866F004AC975 /* CoolDownBar.png */; };
 		4AC0EE81134D9125004AC975 /* StaticEnemyObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0EE80134D9125004AC975 /* StaticEnemyObject.mm */; };
@@ -475,6 +478,10 @@
 		4AC0668C135BABF700A0F0C4 /* scoreFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreFont.png; sourceTree = "<group>"; };
 		4AC0668F135BB19800A0F0C4 /* ScoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreData.h; sourceTree = "<group>"; };
 		4AC06690135BB19800A0F0C4 /* ScoreData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScoreData.mm; sourceTree = "<group>"; };
+		4AC06694135BF65100A0F0C4 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		4AC06695135BF65100A0F0C4 /* SoundManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundManager.mm; sourceTree = "<group>"; };
+		4AC06697135BF7C300A0F0C4 /* physicalBulletShoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = physicalBulletShoot.wav; sourceTree = "<group>"; };
+		4AC066A5135BFA7000A0F0C4 /* controllableBulletShoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = controllableBulletShoot.wav; sourceTree = "<group>"; };
 		4AC0EE79134D84C3004AC975 /* CoolDownBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolDownBar.h; sourceTree = "<group>"; };
 		4AC0EE7A134D84C3004AC975 /* CoolDownBar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoolDownBar.mm; sourceTree = "<group>"; };
 		4AC0EE7C134D866F004AC975 /* CoolDownBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoolDownBar.png; sourceTree = "<group>"; };
@@ -1139,6 +1146,8 @@
 		4AAD8767132EDEDA00D095CD /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				4AC06694135BF65100A0F0C4 /* SoundManager.h */,
+				4AC06695135BF65100A0F0C4 /* SoundManager.mm */,
 			);
 			name = Sound;
 			sourceTree = "<group>";
@@ -1158,6 +1167,25 @@
 				E0F81061120A17DF005866B8 /* GameConfig.h */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		4AC06692135BF4C100A0F0C4 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				4A1024B313492A6A00F31366 /* Backgrounds */,
+				4A1024AA13492A0700F31366 /* ButtonResource */,
+				4A6C3D86132F4E4900C39500 /* SpriteResource */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		4AC06693135BF4D800A0F0C4 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				4AC066A5135BFA7000A0F0C4 /* controllableBulletShoot.wav */,
+				4AC06697135BF7C300A0F0C4 /* physicalBulletShoot.wav */,
+			);
+			name = Sound;
 			sourceTree = "<group>";
 		};
 		4AC0EE7E134D90DB004AC975 /* StaticEnemyObject */ = {
@@ -1569,10 +1597,9 @@
 		50F4144210692EE7002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AC06693135BF4D800A0F0C4 /* Sound */,
+				4AC06692135BF4C100A0F0C4 /* Graphics */,
 				4A762CC4134D9C7C0039CD77 /* UserData */,
-				4A1024B313492A6A00F31366 /* Backgrounds */,
-				4A1024AA13492A0700F31366 /* ButtonResource */,
-				4A6C3D86132F4E4900C39500 /* SpriteResource */,
 				E02BBA10126CC29D006E46A2 /* iTunesArtwork */,
 				E02BB53E126CA5DA006E46A2 /* Icon@2x.png */,
 				E02BB53F126CA5DA006E46A2 /* Icon-Small@2x.png */,
@@ -2067,6 +2094,8 @@
 				4ABF17C1135B708A0061341E /* helpbg.png in Resources */,
 				4AC0668D135BABF700A0F0C4 /* scoreFont.fnt in Resources */,
 				4AC0668E135BABF700A0F0C4 /* scoreFont.png in Resources */,
+				4AC06698135BF7C300A0F0C4 /* physicalBulletShoot.wav in Resources */,
+				4AC066A6135BFA7000A0F0C4 /* controllableBulletShoot.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2119,6 +2148,7 @@
 				4A762CE3134DAC990039CD77 /* PlayerData.mm in Sources */,
 				4A74D803135416FB00139847 /* NextLevelScene.mm in Sources */,
 				4AC06691135BB19800A0F0C4 /* ScoreData.mm in Sources */,
+				4AC06696135BF65100A0F0C4 /* SoundManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
