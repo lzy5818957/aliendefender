@@ -11,7 +11,7 @@
 #import "Box2D.h"
 #import "GameConfig.h"
 #import "Resource.h"
-
+#import "ScoreData.h"
 @interface GameObject : NSObject {
 
 	@protected

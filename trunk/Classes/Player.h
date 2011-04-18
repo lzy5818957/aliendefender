@@ -23,6 +23,8 @@
     PlayerLife *playerLife;
     ChargeBar *chargeBar;
     CoolDownBar *coolDownBar;
+    ScoreData *scoreData;
+
     
 }
 

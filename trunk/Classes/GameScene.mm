@@ -19,6 +19,7 @@
 #define ktagPlayBtn 2
 #define ktagPauseMenu 3
 #define ktagDirectionBtn 4
+#define ktagScoreLabel 5
 #define ktagShootBtn 10
 +(id) scene
 {
@@ -51,17 +52,21 @@
 		angle = 0.f;
         chargeTimer = 0;
         chargeStart = NO;
+        
 		//init GameWorld
 		gameWorld = [[GameWorld alloc] init];
 		[gameWorld setDelegate:self];
-
+        
+        
 		level = [[LevelObject levelWithLevelNumber:[[Resource PlayerData].currentLevel intValue]] retain];
 		NSMutableArray *wavesOfGameObjectArray = [level generateGameObject];
         [gameWorld setUpPlayerWeapon];
 		[gameWorld setGameObjectReadyQueue: wavesOfGameObjectArray];
 		
+        
 		[self schedule: @selector(tick:)];
         
+        //setup sprites
         CCSprite *bg = [CCSprite spriteWithFile: @"gamebg.jpg"];
         bg.position = ccp(240,160);
         [self addChild: bg z:-1];
@@ -99,6 +104,16 @@
         directionBtn.position = CGPointMake(410, 160);
         directionBtn.opacity = 200.0f;
         [self addChild: directionBtn z:1 tag:ktagDirectionBtn];
+        
+        int *score = [Resource Score];
+        (*score) = 0;
+        [((ScoreData*)[Resource ScoreData: [[Resource PlayerData] currentLevel]]).score intValue];
+        NSString *scoreString = [NSString stringWithFormat:@"%d",(*score)];
+        CCLabelBMFont *scoreLabel = [CCLabelBMFont labelWithString:scoreString fntFile:@"scoreFont.fnt"];
+        [scoreLabel setAnchorPoint:CGPointMake(0.0f, 0.0f)];
+        [scoreLabel setPosition:ccp(5, 260)];
+        [self addChild:scoreLabel z: 1 tag:ktagScoreLabel];
+        
 	}
     
 
@@ -249,6 +264,7 @@
     
     gameWorld.player.chargeBar.charge = chargeTimer;
     
+    [((CCLabelBMFont*)[self getChildByTag:ktagScoreLabel]) setString: [NSString stringWithFormat:@"%d", *[Resource Score]]];
     
 }
 
